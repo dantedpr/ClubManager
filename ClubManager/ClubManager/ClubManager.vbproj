@@ -79,6 +79,7 @@
       <DependentUpon>Application.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Config\DataBaseManager.vb" />
     <Compile Include="MainWindow.xaml.vb">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -145,7 +146,6 @@
     <Resource Include="Images\Logo2.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Config\" />
     <Folder Include="NewFolder2\" />
     <Folder Include="Windows\" />
   </ItemGroup>
