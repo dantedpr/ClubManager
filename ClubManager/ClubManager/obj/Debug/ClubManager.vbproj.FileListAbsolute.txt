@@ -1,0 +1,16 @@
+C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\bin\Debug\ClubManager.exe.config
+C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\bin\Debug\ClubManager.exe
+C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\bin\Debug\ClubManager.pdb
+C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\bin\Debug\ClubManager.xml
+C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\ClubManager.vbproj.AssemblyReference.cache
+C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\MainWindow.g.vb
+C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\Application.g.vb
+C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\ClubManager_MarkupCompile.cache
+C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\MainWindow.baml
+C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\ClubManager.g.resources
+C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\ClubManager.Resources.resources
+C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\ClubManager.vbproj.GenerateResource.cache
+C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\ClubManager.vbproj.CoreCompileInputs.cache
+C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\ClubManager.exe
+C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\ClubManager.xml
+C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\ClubManager.pdb
