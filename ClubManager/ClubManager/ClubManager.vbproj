@@ -145,7 +145,9 @@
     <Resource Include="Images\Logo2.png" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Config\" />
     <Folder Include="NewFolder2\" />
+    <Folder Include="Windows\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Logo2.ico" />
