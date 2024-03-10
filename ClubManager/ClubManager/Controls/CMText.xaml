@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="Controls.CMText"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="clr-namespace:ClubManager.Controls"
+        mc:Ignorable="d"
+        d:DesignHeight="18" d:DesignWidth="148">
+
+    <Border Name="MiBorde" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0">
+        <Border.Style>
+            <Style TargetType="{x:Type Border}">
+                <Setter Property="SnapsToDevicePixels" Value="True"/>
+                <Style.Triggers>
+                    <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                        <Setter Property="Border.BorderThickness" Value="2"/>
+                        <Setter Property="Border.BorderBrush" Value="#1B7E9F"/>
+                    </Trigger>
+                    <Trigger Property="IsKeyboardFocusWithin" Value="False">
+                        <Setter Property="Border.BorderThickness" Value="1"/>
+                        <Setter Property="Border.BorderBrush" Value="#1B7E9F"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Border.Style>
+
+        <TextBox Name="MiTextBox" SelectionBrush="#1B7E9F" SelectionOpacity="0.5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="0" >
+            <TextBox.Style>
+                <Style TargetType="{x:Type TextBox}">
+                    <Setter Property="SnapsToDevicePixels" Value="True"/>
+                    <Setter Property="FontFamily" Value="Arial"/>
+                    <Setter Property="FontSize" Value="12"/>
+                    <Setter Property="Height" Value="Auto"/>
+                    <Setter Property="Border.BorderThickness" Value="0"/>
+                    <Setter Property="VerticalContentAlignment" Value="Center"/>
+                </Style>
+            </TextBox.Style>
+        </TextBox>
+    </Border>
+</UserControl>
