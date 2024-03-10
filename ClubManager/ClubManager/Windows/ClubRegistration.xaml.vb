@@ -1,7 +1,4 @@
-﻿Class MainWindow
-
-    Public Property username As String
-    Private Property pass As String
+﻿Public Class ClubRegistration
 
     Public Sub New()
 
@@ -14,13 +11,12 @@
 
     Public Sub Load()
 
-        AddHandler btnClose.Click, AddressOf CloseApp
-        AddHandler btnRegister.Click, AddressOf RegisterAccount
+        AddHandler btnClose.Click, AddressOf Close
 
     End Sub
 
 
-    Public Overloads Sub CloseApp()
+    Public Overloads Sub Close()
         System.Windows.Application.Current.Shutdown()
     End Sub
 
@@ -34,13 +30,4 @@
         End If
     End Sub
 
-    Public Sub RegisterAccount()
-
-        Dim w As New ClubRegistration
-
-        w.Show()
-
-        Me.Close()
-
-    End Sub
 End Class
