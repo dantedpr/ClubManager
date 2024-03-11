@@ -20,3 +20,5 @@ C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\Controls\
 C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\GeneratedInternalTypeHelper.g.vb
 C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\ClubManager_MarkupCompile.lref
 C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\Controls\CMText.baml
+C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\Controls\CMButton.g.vb
+C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\Controls\CMButton.baml
