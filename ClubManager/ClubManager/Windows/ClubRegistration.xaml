@@ -23,8 +23,8 @@
             </Border.BorderBrush>
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
-                    <GradientStop Color="#D4E2E7" Offset="0"/>
-                    <GradientStop Color="#D4E2E7" Offset="1"/>
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
             <Grid>
@@ -92,7 +92,8 @@
                 </Grid>
 
                 <controls:CMText  x:Name="userName" Width="200" Height="30" Margin="143,58,453,428" Grid.Row="1" />
-                
+                <controls:CMButton x:Name="BUT_Aceptar"  Width="100" Height="30" Margin="646,387,50,99" Border = "2" Grid.Row="1"></controls:CMButton>
+                <controls:CMButton x:Name="BUT_Cancel"  Width="100" Height="30" Margin="646,439,50,47" Border = "2" Grid.Row="1"></controls:CMButton>
 
             </Grid>
         </Border>
