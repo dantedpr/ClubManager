@@ -14,3 +14,13 @@ C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\ClubManag
 C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\ClubManager.exe
 C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\ClubManager.xml
 C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\ClubManager.pdb
+C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\Windows\ClubRegistration.baml
+C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\Windows\ClubRegistration.g.vb
+C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\Controls\CMText.g.vb
+C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\GeneratedInternalTypeHelper.g.vb
+C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\ClubManager_MarkupCompile.lref
+C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\Controls\CMText.baml
+C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\Controls\CMButton.g.vb
+C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\Controls\CMButton.baml
+C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\Windows\FrameWindow.baml
+C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\Windows\FrameWindow.g.vb
