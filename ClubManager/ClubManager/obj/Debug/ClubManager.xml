@@ -54,6 +54,46 @@ ClubManager
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="T:ClubManager.Controls.CMButton">
+<summary>
+CMButton
+</summary>
+</member>
+<member name="M:ClubManager.Controls.CMButton.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:ClubManager.Controls.CMText">
+<summary>
+CMText
+</summary>
+</member>
+<member name="M:ClubManager.Controls.CMText.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:ClubManager.ClubRegistration">
+<summary>
+ClubRegistration
+</summary>
+</member>
+<member name="M:ClubManager.ClubRegistration.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:ClubManager.FrameWindow">
+<summary>
+FrameWindow
+</summary>
+</member>
+<member name="M:ClubManager.FrameWindow.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
 <member name="T:ClubManager.Application">
 <summary>
 Application
@@ -77,6 +117,36 @@ MainWindow
 <member name="M:ClubManager.MainWindow.InitializeComponent">
 <summary>
 InitializeComponent
+</summary>
+</member>
+<member name="T:ClubManager.XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+<summary>
+GeneratedInternalTypeHelper
+</summary>
+</member>
+<member name="M:ClubManager.XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+<summary>
+CreateInstance
+</summary>
+</member>
+<member name="M:ClubManager.XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+<summary>
+GetPropertyValue
+</summary>
+</member>
+<member name="M:ClubManager.XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+<summary>
+SetPropertyValue
+</summary>
+</member>
+<member name="M:ClubManager.XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+<summary>
+CreateDelegate
+</summary>
+</member>
+<member name="M:ClubManager.XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+<summary>
+AddEventHandler
 </summary>
 </member>
 </members>
