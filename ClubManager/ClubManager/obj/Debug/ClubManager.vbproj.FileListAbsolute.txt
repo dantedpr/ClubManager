@@ -22,3 +22,5 @@ C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\ClubManag
 C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\Controls\CMText.baml
 C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\Controls\CMButton.g.vb
 C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\Controls\CMButton.baml
+C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\Windows\FrameWindow.baml
+C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\Windows\FrameWindow.g.vb

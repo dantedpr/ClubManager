@@ -84,6 +84,16 @@ ClubRegistration
 InitializeComponent
 </summary>
 </member>
+<member name="T:ClubManager.FrameWindow">
+<summary>
+FrameWindow
+</summary>
+</member>
+<member name="M:ClubManager.FrameWindow.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
 <member name="T:ClubManager.Application">
 <summary>
 Application

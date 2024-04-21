@@ -92,7 +92,7 @@
                 <StackPanel Width="220"
                             Grid.Row="1"
                             Orientation="Vertical"
-                            Margin="0,35,0,0">
+                            Margin="288,35,288,0" Height="481" VerticalAlignment="Top">
                     <Image Source="/Images/Logo2.png"
                            Width="100" Height="100"/>
                     <TextBlock Text="ClubManager" Foreground="Black" FontSize="25" FontWeight="Medium" FontFamily="Arial" HorizontalAlignment="Center"/>
