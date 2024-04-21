@@ -1,4 +1,4 @@
-﻿Class MainWindow
+﻿Class FrameWindow
 
     Public Property username As String
     Private Property pass As String
@@ -15,8 +15,6 @@
     Public Sub Load()
 
         AddHandler btnClose.Click, AddressOf CloseApp
-        AddHandler btnRegister.Click, AddressOf RegisterAccount
-        AddHandler btnLogin.Click, AddressOf Login
 
 
     End Sub
@@ -46,21 +44,4 @@
 
     End Sub
 
-    Public Sub Login()
-
-        If txtUser.Text <> "" And txtPass.Password <> "" Then
-
-            Dim db As New DatabaseManager
-            If db.CheckUser(txtUser.Text, txtPass.Password) Then
-                Dim Club As New Club
-
-                Club.LoadClub(txtUser.Text)
-            Else
-                '''NO EXISTE USUARIO 
-            End If
-
-
-        End If
-
-    End Sub
 End Class

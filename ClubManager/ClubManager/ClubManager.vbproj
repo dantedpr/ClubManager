@@ -78,8 +78,12 @@
     <Compile Include="Controls\CMText.xaml.vb">
       <DependentUpon>CMText.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Entities\Club.vb" />
     <Compile Include="Windows\ClubRegistration.xaml.vb">
       <DependentUpon>ClubRegistration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\FrameWindow.xaml.vb">
+      <DependentUpon>FrameWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="Controls\CMButton.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -105,6 +109,10 @@
     <Page Include="Windows\ClubRegistration.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\FrameWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -175,6 +183,31 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\id.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\location.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\email.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\telephone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\upload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\padlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\eye.png" />
+    <Resource Include="Images\hidden.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
