@@ -1,11 +1,12 @@
-﻿Imports Microsoft.Win32
+﻿Imports System.Data
+Imports Microsoft.Win32
 
 Public Class ClubRegistration
 
     Public Property showPass = False
     Private isMaximized As Boolean = False
     Private previousWindowState As WindowState
-
+    Private imagenClub As BitmapImage
     Public Sub New()
 
         ' Esta llamada es exigida por el diseñador.
@@ -38,6 +39,9 @@ Public Class ClubRegistration
         BUT_Image.GetBackground = New SolidColorBrush(Colors.LightBlue)
         BUT_Image.ImageName = "upload.png"
         BUT_Image.ButText = "Seleccionar escudo"
+
+        clubPhone.MaxLength = 9
+        clubPhone.AllowNegatives = False
 
         AddHandler btnPassword.Click, AddressOf showPassword
 
@@ -84,6 +88,7 @@ Public Class ClubRegistration
             Try
                 Dim rutaImagen As String = openFileDialog.FileName
                 Dim imagen As New BitmapImage(New Uri(rutaImagen))
+                imagenClub = imagen
                 imagenSeleccionada.Source = imagen
             Catch ex As Exception
                 MessageBox.Show($"Error al cargar la imagen: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error)
@@ -93,6 +98,16 @@ Public Class ClubRegistration
 
     Public Sub SaveClub()
 
+
+        'Dim w As New FrameWindow
+        'w.Show()
+
+        'Dim w1 As New HomeWindow
+        'w.CleanWindow()
+        'w.Content.Children.Add(w1)
+        'w1.Load()
+
+
         If clubCode.Text = "" Or clubName.Text = "" Or clubAddress.Text = "" Or clubMail.Text = "" Or clubPhone.Text = "" Or clubPhone.Text.Length < 9 Then
 
             MessageBox.Show("¡Faltán datos por introducir! Por favor revisa los datos introducidos.", "Error", MessageBoxButton.OK, MessageBoxImage.Error)
@@ -101,12 +116,18 @@ Public Class ClubRegistration
 
             Dim club As New Club
 
-            If club.SaveCheck(clubCode.Text, clubName.Text, clubAddress.Text, clubMail.Text, clubPhone.Text) > -1 Then
-                club.SetPassword(clubPassUnmask.Text)
+            If Club.SaveCheck(clubCode.Text, clubName.Text, clubAddress.Text, clubMail.Text, clubPhone.Text) > -1 Then
+                Club.SetPassword(clubPassUnmask.Text)
             Else
                 MessageBox.Show("¡Ya existe un club con el mismo código o mail, prueba a cambiarlos!", "Error", MessageBoxButton.OK, MessageBoxImage.Error)
                 Return
             End If
+
+            Dim imageBytes As Byte() = ImageManager.ImageToByteArray(imagenClub)
+
+            ' Convertir el byte array a una cadena base64
+            Dim base64String As String = ImageManager.ByteArrayToBase64String(imageBytes)
+            Club.logoClub = base64String
 
         End If
 

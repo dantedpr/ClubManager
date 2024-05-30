@@ -3,44 +3,80 @@
   "WorkspaceRootPath": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|c:\\users\\dante\\documents\\clubmanager\\clubmanager\\clubmanager\\windows\\framewindow.xaml.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "AbsoluteMoniker": "D:0:0:{1B2E9E5F-67FA-4678-A1B8-3B13811A37DE}|Utils_CS\\Utils_CS.csproj|c:\\users\\dante\\documents\\clubmanager\\clubmanager\\utils_cs\\exporter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B2E9E5F-67FA-4678-A1B8-3B13811A37DE}|Utils_CS\\Utils_CS.csproj|solutionrelative:utils_cs\\exporter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B2E9E5F-67FA-4678-A1B8-3B13811A37DE}|Utils_CS\\Utils_CS.csproj|c:\\users\\dante\\documents\\clubmanager\\clubmanager\\utils_cs\\officetools.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B2E9E5F-67FA-4678-A1B8-3B13811A37DE}|Utils_CS\\Utils_CS.csproj|solutionrelative:utils_cs\\officetools.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\clubmanager\\windows\\homewindow.xaml.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|solutionrelative:clubmanager\\windows\\homewindow.xaml.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\clubmanager\\controls\\cmgrid.xaml.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|solutionrelative:clubmanager\\controls\\cmgrid.xaml.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\clubmanager\\windows\\framewindow.xaml.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|solutionrelative:clubmanager\\windows\\framewindow.xaml.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|c:\\users\\dante\\documents\\clubmanager\\clubmanager\\clubmanager\\windows\\framewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|solutionrelative:clubmanager\\windows\\framewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\clubmanager\\mainwindow.xaml.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|solutionrelative:clubmanager\\mainwindow.xaml.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\clubmanager\\windows\\clubregistration.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|solutionrelative:clubmanager\\windows\\clubregistration.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\clubmanager\\controls\\cmtext.xaml.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|solutionrelative:clubmanager\\controls\\cmtext.xaml.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\clubmanager\\windows\\clubregistration.xaml.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|solutionrelative:clubmanager\\windows\\clubregistration.xaml.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|c:\\users\\dante\\documents\\clubmanager\\clubmanager\\clubmanager\\controls\\cmbutton.xaml.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "AbsoluteMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\clubmanager\\controls\\cmbutton.xaml.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|solutionrelative:clubmanager\\controls\\cmbutton.xaml.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\clubmanager\\entities\\club.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|solutionrelative:clubmanager\\entities\\club.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\clubmanager\\config\\databasemanager.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|solutionrelative:clubmanager\\config\\databasemanager.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\clubmanager\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|solutionrelative:clubmanager\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\clubmanager\\windows\\clubregistration.xaml.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|solutionrelative:clubmanager\\windows\\clubregistration.xaml.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|c:\\users\\dante\\documents\\clubmanager\\clubmanager\\clubmanager\\mainwindow.xaml.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|solutionrelative:clubmanager\\mainwindow.xaml.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\clubmanager\\controls\\cmgrid.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|solutionrelative:clubmanager\\controls\\cmgrid.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|c:\\users\\dante\\documents\\clubmanager\\clubmanager\\clubmanager\\windows\\homewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|solutionrelative:clubmanager\\windows\\homewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\clubmanager\\windows\\clubregistration.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|solutionrelative:clubmanager\\windows\\clubregistration.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\clubmanager\\config\\imagemanager.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|solutionrelative:clubmanager\\config\\imagemanager.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|c:\\users\\dante\\documents\\clubmanager\\clubmanager\\clubmanager\\images\\excel.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|solutionrelative:clubmanager\\images\\excel.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\clubmanager\\windows\\framewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|solutionrelative:clubmanager\\windows\\framewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\clubmanager\\controls\\cmbutton.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|solutionrelative:clubmanager\\controls\\cmbutton.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\clubmanager\\controls\\cmtext.xaml.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|solutionrelative:clubmanager\\controls\\cmtext.xaml.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\clubmanager\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|solutionrelative:clubmanager\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{36E6DF05-EDDF-40AF-8E89-7E851F75C393}|ClubManager\\ClubManager.vbproj|C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\clubmanager\\controls\\cmtext.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -54,120 +90,134 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ClubRegistration.xaml.vb",
-              "DocumentMoniker": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Windows\\ClubRegistration.xaml.vb",
-              "RelativeDocumentMoniker": "ClubManager\\Windows\\ClubRegistration.xaml.vb",
-              "ToolTip": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Windows\\ClubRegistration.xaml.vb",
-              "RelativeToolTip": "ClubManager\\Windows\\ClubRegistration.xaml.vb",
-              "ViewState": "AQIAAFwAAAAAAAAAAAAYwGwAAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-03-09T16:15:10.504Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "ClubManager\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\MainWindow.xaml",
-              "RelativeToolTip": "ClubManager\\MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-03-02T16:30:49.479Z",
-              "IsPinned": true,
+              "DocumentIndex": 0,
+              "Title": "Exporter.cs",
+              "DocumentMoniker": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\Utils_CS\\Exporter.cs",
+              "RelativeDocumentMoniker": "Utils_CS\\Exporter.cs",
+              "ToolTip": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\Utils_CS\\Exporter.cs",
+              "RelativeToolTip": "Utils_CS\\Exporter.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAgwDkAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T14:10:09.23Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "FrameWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Windows\\FrameWindow.xaml",
-              "RelativeDocumentMoniker": "ClubManager\\Windows\\FrameWindow.xaml",
-              "ToolTip": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Windows\\FrameWindow.xaml",
-              "RelativeToolTip": "ClubManager\\Windows\\FrameWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-04-21T10:54:06.361Z",
+              "Title": "OfficeTools.cs",
+              "DocumentMoniker": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\Utils_CS\\OfficeTools.cs",
+              "RelativeDocumentMoniker": "Utils_CS\\OfficeTools.cs",
+              "ToolTip": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\Utils_CS\\OfficeTools.cs",
+              "RelativeToolTip": "Utils_CS\\OfficeTools.cs",
+              "ViewState": "AQIAAKYAAAAAAAAAAAAQwLUAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-30T13:34:09.571Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FrameWindow.xaml.vb",
-              "DocumentMoniker": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Windows\\FrameWindow.xaml.vb",
-              "RelativeDocumentMoniker": "ClubManager\\Windows\\FrameWindow.xaml.vb",
-              "ToolTip": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Windows\\FrameWindow.xaml.vb",
-              "RelativeToolTip": "ClubManager\\Windows\\FrameWindow.xaml.vb",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC0AAAAAAAAA",
+              "DocumentIndex": 9,
+              "Title": "MainWindow.xaml.vb",
+              "DocumentMoniker": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\MainWindow.xaml.vb",
+              "RelativeDocumentMoniker": "ClubManager\\MainWindow.xaml.vb",
+              "ToolTip": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\MainWindow.xaml.vb",
+              "RelativeToolTip": "ClubManager\\MainWindow.xaml.vb",
+              "ViewState": "AQIAACoAAAAAAAAAAAAcwEEAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-04-21T10:53:35.292Z",
+              "WhenOpened": "2024-03-02T16:30:48.468Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 13,
+              "Title": "ImageManager.vb",
+              "DocumentMoniker": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Config\\ImageManager.vb",
+              "RelativeDocumentMoniker": "ClubManager\\Config\\ImageManager.vb",
+              "ToolTip": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Config\\ImageManager.vb",
+              "RelativeToolTip": "ClubManager\\Config\\ImageManager.vb",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAAwCgAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-05-27T15:56:32.954Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "CMButton.xaml.vb",
               "DocumentMoniker": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Controls\\CMButton.xaml.vb",
               "RelativeDocumentMoniker": "ClubManager\\Controls\\CMButton.xaml.vb",
               "ToolTip": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Controls\\CMButton.xaml.vb",
               "RelativeToolTip": "ClubManager\\Controls\\CMButton.xaml.vb",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACQAAAAAAAAA",
+              "ViewState": "AQIAAOsAAAAAAAAAAAAvwPsAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2024-03-11T11:16:13.855Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "CMButton.xaml",
-              "DocumentMoniker": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Controls\\CMButton.xaml",
-              "RelativeDocumentMoniker": "ClubManager\\Controls\\CMButton.xaml",
-              "ToolTip": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Controls\\CMButton.xaml",
-              "RelativeToolTip": "ClubManager\\Controls\\CMButton.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-03-11T11:16:00.809Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CMText.xaml.vb",
-              "DocumentMoniker": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Controls\\CMText.xaml.vb",
-              "RelativeDocumentMoniker": "ClubManager\\Controls\\CMText.xaml.vb",
-              "ToolTip": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Controls\\CMText.xaml.vb",
-              "RelativeToolTip": "ClubManager\\Controls\\CMText.xaml.vb",
-              "ViewState": "AQIAAHIAAAAAAAAAAAAuwEkAAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-03-10T16:31:57.205Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 12,
               "Title": "ClubRegistration.xaml",
               "DocumentMoniker": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Windows\\ClubRegistration.xaml",
               "RelativeDocumentMoniker": "ClubManager\\Windows\\ClubRegistration.xaml",
               "ToolTip": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Windows\\ClubRegistration.xaml",
               "RelativeToolTip": "ClubManager\\Windows\\ClubRegistration.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-03-09T16:14:14.797Z",
+              "WhenOpened": "2024-05-30T10:29:31.035Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CMGrid.xaml.vb",
+              "DocumentMoniker": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Controls\\CMGrid.xaml.vb",
+              "RelativeDocumentMoniker": "ClubManager\\Controls\\CMGrid.xaml.vb",
+              "ToolTip": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Controls\\CMGrid.xaml.vb",
+              "RelativeToolTip": "ClubManager\\Controls\\CMGrid.xaml.vb",
+              "ViewState": "AQIAAHwAAAAAAAAAAAAcwKoAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-05-30T10:16:11.725Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "CMText.xaml",
-              "DocumentMoniker": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Controls\\CMText.xaml",
-              "RelativeDocumentMoniker": "ClubManager\\Controls\\CMText.xaml",
-              "ToolTip": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Controls\\CMText.xaml",
-              "RelativeToolTip": "ClubManager\\Controls\\CMText.xaml",
+              "Title": "CMGrid.xaml",
+              "DocumentMoniker": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Controls\\CMGrid.xaml",
+              "RelativeDocumentMoniker": "ClubManager\\Controls\\CMGrid.xaml",
+              "ToolTip": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Controls\\CMGrid.xaml",
+              "RelativeToolTip": "ClubManager\\Controls\\CMGrid.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-03-10T16:32:23.913Z",
+              "WhenOpened": "2024-05-30T10:28:50.971Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HomeWindow.xaml.vb",
+              "DocumentMoniker": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Windows\\HomeWindow.xaml.vb",
+              "RelativeDocumentMoniker": "ClubManager\\Windows\\HomeWindow.xaml.vb",
+              "ToolTip": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Windows\\HomeWindow.xaml.vb",
+              "RelativeToolTip": "ClubManager\\Windows\\HomeWindow.xaml.vb",
+              "ViewState": "AQIAADYAAAAAAAAAAAAawEUAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-04-21T11:37:49.135Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Club.vb",
+              "DocumentMoniker": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Entities\\Club.vb",
+              "RelativeDocumentMoniker": "ClubManager\\Entities\\Club.vb",
+              "ToolTip": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Entities\\Club.vb",
+              "RelativeToolTip": "ClubManager\\Entities\\Club.vb",
+              "ViewState": "AQIAAIwAAAAAAAAAAAAawKIAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-04-21T11:16:11.961Z",
               "EditorCaption": ""
             },
             {
@@ -178,21 +228,120 @@
               "RelativeDocumentMoniker": "ClubManager\\Config\\DataBaseManager.vb",
               "ToolTip": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Config\\DataBaseManager.vb",
               "RelativeToolTip": "ClubManager\\Config\\DataBaseManager.vb",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADsAAAAiAAAA",
+              "ViewState": "AQIAADMAAAAAAAAAAAAhwEUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-03-09T15:51:00.402Z"
+              "WhenOpened": "2024-03-09T15:51:00.402Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MainWindow.xaml.vb",
-              "DocumentMoniker": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\MainWindow.xaml.vb",
-              "RelativeDocumentMoniker": "ClubManager\\MainWindow.xaml.vb",
-              "ToolTip": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\MainWindow.xaml.vb",
-              "RelativeToolTip": "ClubManager\\MainWindow.xaml.vb",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAYwCsAAAAAAAAA",
+              "DocumentIndex": 4,
+              "Title": "FrameWindow.xaml.vb",
+              "DocumentMoniker": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Windows\\FrameWindow.xaml.vb",
+              "RelativeDocumentMoniker": "ClubManager\\Windows\\FrameWindow.xaml.vb",
+              "ToolTip": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Windows\\FrameWindow.xaml.vb",
+              "RelativeToolTip": "ClubManager\\Windows\\FrameWindow.xaml.vb",
+              "ViewState": "AQIAADoAAAAAAAAAAAAQwEMAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-03-02T16:30:48.468Z",
+              "WhenOpened": "2024-04-21T10:53:35.292Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "HomeWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Windows\\HomeWindow.xaml",
+              "RelativeDocumentMoniker": "ClubManager\\Windows\\HomeWindow.xaml",
+              "ToolTip": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Windows\\HomeWindow.xaml",
+              "RelativeToolTip": "ClubManager\\Windows\\HomeWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-30T14:00:02.443Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ClubRegistration.xaml.vb",
+              "DocumentMoniker": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Windows\\ClubRegistration.xaml.vb",
+              "RelativeDocumentMoniker": "ClubManager\\Windows\\ClubRegistration.xaml.vb",
+              "ToolTip": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Windows\\ClubRegistration.xaml.vb",
+              "RelativeToolTip": "ClubManager\\Windows\\ClubRegistration.xaml.vb",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAUwC4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-03-09T16:15:10.504Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "FrameWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Windows\\FrameWindow.xaml",
+              "RelativeDocumentMoniker": "ClubManager\\Windows\\FrameWindow.xaml",
+              "ToolTip": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Windows\\FrameWindow.xaml",
+              "RelativeToolTip": "ClubManager\\Windows\\FrameWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-04T12:21:08.792Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "CMButton.xaml",
+              "DocumentMoniker": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Controls\\CMButton.xaml",
+              "RelativeDocumentMoniker": "ClubManager\\Controls\\CMButton.xaml",
+              "ToolTip": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Controls\\CMButton.xaml",
+              "RelativeToolTip": "ClubManager\\Controls\\CMButton.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-04T12:11:39.931Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "CMText.xaml.vb",
+              "DocumentMoniker": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Controls\\CMText.xaml.vb",
+              "RelativeDocumentMoniker": "ClubManager\\Controls\\CMText.xaml.vb",
+              "ToolTip": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Controls\\CMText.xaml.vb",
+              "RelativeToolTip": "ClubManager\\Controls\\CMText.xaml.vb",
+              "ViewState": "AQIAAMYAAAAAAAAAAADwv9cAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-03-10T16:31:57.205Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "excel.png",
+              "DocumentMoniker": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Images\\excel.png",
+              "RelativeDocumentMoniker": "ClubManager\\Images\\excel.png",
+              "ToolTip": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Images\\excel.png",
+              "RelativeToolTip": "ClubManager\\Images\\excel.png",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2024-05-30T14:01:05.714Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "ClubManager\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\MainWindow.xaml",
+              "RelativeToolTip": "ClubManager\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-21T11:12:23.716Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "CMText.xaml",
+              "DocumentMoniker": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Controls\\CMText.xaml",
+              "RelativeDocumentMoniker": "ClubManager\\Controls\\CMText.xaml",
+              "ToolTip": "C:\\Users\\dante\\Documents\\ClubManager\\ClubManager\\ClubManager\\Controls\\CMText.xaml",
+              "RelativeToolTip": "ClubManager\\Controls\\CMText.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-03-10T16:32:23.913Z",
               "EditorCaption": ""
             }
           ]

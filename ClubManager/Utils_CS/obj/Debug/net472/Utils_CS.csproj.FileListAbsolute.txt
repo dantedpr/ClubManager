@@ -1,0 +1,11 @@
+C:\Users\dante\Documents\ClubManager\ClubManager\Utils_CS\obj\Debug\net472\Utils_CS.csproj.AssemblyReference.cache
+C:\Users\dante\Documents\ClubManager\ClubManager\Utils_CS\obj\Debug\net472\Utils_CS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dante\Documents\ClubManager\ClubManager\Utils_CS\obj\Debug\net472\Utils_CS.AssemblyInfoInputs.cache
+C:\Users\dante\Documents\ClubManager\ClubManager\Utils_CS\obj\Debug\net472\Utils_CS.AssemblyInfo.cs
+C:\Users\dante\Documents\ClubManager\ClubManager\Utils_CS\obj\Debug\net472\Utils_CS.csproj.CoreCompileInputs.cache
+C:\Users\dante\Documents\ClubManager\ClubManager\Utils_CS\obj\Debug\net472\Utils_CS.sourcelink.json
+C:\Users\dante\Documents\ClubManager\ClubManager\Utils_CS\bin\Debug\net472\Utils_CS.exe.config
+C:\Users\dante\Documents\ClubManager\ClubManager\Utils_CS\bin\Debug\net472\Utils_CS.exe
+C:\Users\dante\Documents\ClubManager\ClubManager\Utils_CS\bin\Debug\net472\Utils_CS.pdb
+C:\Users\dante\Documents\ClubManager\ClubManager\Utils_CS\obj\Debug\net472\Utils_CS.exe
+C:\Users\dante\Documents\ClubManager\ClubManager\Utils_CS\obj\Debug\net472\Utils_CS.pdb

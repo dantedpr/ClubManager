@@ -27,7 +27,7 @@
     End Sub
 
     Public Overloads Sub Minimize()
-        WindowState = WindowState.Maximized
+        WindowState = WindowState.Minimized
     End Sub
 
     Public Sub AllowMovement(sender As Object, e As MouseEventArgs)
@@ -48,6 +48,9 @@
 
     Public Sub Login()
 
+        txtUser.Text = "PRATAE"
+        txtPass.Password = "DanteTest123"
+
         If txtUser.Text <> "" And txtPass.Password <> "" Then
 
             Dim db As New DatabaseManager
@@ -55,6 +58,18 @@
                 Dim Club As New Club
 
                 Club.LoadClub(txtUser.Text)
+
+
+                Dim w As New FrameWindow
+                w.Show()
+
+                Dim w1 As New HomeWindow
+                w.CleanWindow()
+                w.Content.Children.Add(w1)
+                w1.Load()
+
+                Me.Close()
+
             Else
                 '''NO EXISTE USUARIO 
             End If

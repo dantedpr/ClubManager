@@ -1,42 +1,45 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.Data
+Imports System.Data.SqlClient
 
 Public Class Club
 
-    Public Property ID As Integer
-    Public Property Code As String
-    Public Property Name As String
-    Public Property Address As String
-    Public Property Mail As String
-    Public Property Phone As String
-    Private Property Password As String
+    Public Shared Property ID As Integer
+    Public Shared Property Code As String
+    Public Shared Property Name As String
+    Public Shared Property Address As String
+    Public Shared Property Mail As String
+    Public Shared Property Phone As String
+    Public Shared Property logoClub As String
+    Private Shared Property Password As String
+
 
     Public Sub New()
 
     End Sub
 
-    Public Sub New(ByVal code As String, ByVal name As String, ByVal address As String, ByVal mail As String, ByVal phone As String, ByVal password As String)
-        Me.Code = code
-        Me.Name = name
-        Me.Address = address
-        Me.Mail = mail
-        Me.Phone = phone
-        Me.Password = password
+    Public Sub New(ByVal code1 As String, ByVal name1 As String, ByVal address1 As String, ByVal mail1 As String, ByVal phone1 As String, ByVal password1 As String)
+        Code = code1
+        Name = name1
+        Address = address1
+        Mail = mail1
+        Phone = phone1
+        Password = password1
     End Sub
 
     Public Shared Function CreateClub(ByVal code As String, ByVal name As String, ByVal address As String, ByVal mail As String, ByVal phone As String, ByVal password As String) As Club
         Return New Club(code, name, address, mail, phone, password)
     End Function
 
-    Public Sub Map(ByVal reader As SqlDataReader)
-        Me.ID = CInt(reader("ID"))
-        Me.Code = reader("CODE").ToString()
-        Me.Name = reader("NAME").ToString()
-        Me.Address = reader("ADDRESS").ToString()
-        Me.Mail = reader("MAIL").ToString()
-        Me.Phone = reader("PHONE").ToString()
+    Private Shared Sub Map(ByVal reader As SqlDataReader)
+        ID = CInt(reader("ID"))
+        Code = reader("CODE").ToString()
+        Name = reader("NAME").ToString()
+        Address = reader("ADDRESS").ToString()
+        Mail = reader("MAIL").ToString()
+        Phone = reader("PHONE").ToString()
     End Sub
 
-    Public Function SaveCheck(code As String, name As String, address As String, mail As String, phone As String) As Integer
+    Public Shared Function SaveCheck(code1 As String, name As String, address As String, mail As String, phone As String) As Integer
 
         Dim query As String = "INSERT INTO Club ([CODE], [NAME], [ADDRESS], [MAIL], [PHONE]) VALUES (@Code, @Name, @Address, @Mail, @Phone); SELECT SCOPE_IDENTITY();"
         Dim clubId As Integer = -1
@@ -48,7 +51,7 @@ Public Class Club
                 connection.Open()
 
                 Using command As New SqlCommand(query, connection)
-                    command.Parameters.AddWithValue("@Code", code)
+                    command.Parameters.AddWithValue("@Code", code1)
                     command.Parameters.AddWithValue("@Name", name)
                     command.Parameters.AddWithValue("@Address", address)
                     command.Parameters.AddWithValue("@Mail", mail)
@@ -62,13 +65,13 @@ Public Class Club
             Console.WriteLine("Error al insertar el club: " & ex.Message)
         End Try
 
-        Me.Code = code
+        Code = code1
 
         Return clubId
 
     End Function
 
-    Public Sub SetPassword(pass As String)
+    Public Shared Sub SetPassword(pass As String)
 
         Try
             Dim query As String = "INSERT INTO ClubPass ([CLUB_CODE], [CLUB_PASS]) VALUES (@Code, @Pass); SELECT SCOPE_IDENTITY();"
@@ -79,7 +82,7 @@ Public Class Club
                 connection.Open()
 
                 Using command As New SqlCommand(query, connection)
-                    command.Parameters.AddWithValue("@Code", Me.Code)
+                    command.Parameters.AddWithValue("@Code", Code)
                     command.Parameters.AddWithValue("@Pass", pass)
                     command.ExecuteScalar()
                 End Using
@@ -90,7 +93,7 @@ Public Class Club
 
     End Sub
 
-    Public Sub LoadClub(code As String)
+    Public Shared Sub LoadClub(code As String)
 
         Try
 
@@ -121,4 +124,42 @@ Public Class Club
 
 
     End Sub
+
+    Public Shared Function GetAllClubs() As DataTable
+        Try
+
+            Dim query = "SELECT ID, NAME FROM Club"
+            Dim exists = False
+            Dim db As New DatabaseManager
+            Dim dataTable As New DataTable()
+
+            ' Agregar columnas al DataTable (por ejemplo)
+            dataTable.Columns.Add("ID", GetType(Integer))
+            dataTable.Columns.Add("NAME", GetType(String))
+            Using connection As New SqlConnection(db.connectionString)
+                ' Open connection
+                connection.Open()
+
+                Using command As New SqlCommand(query, connection)
+
+                    Dim dr As SqlDataReader = command.ExecuteReader()
+                    While dr.Read()
+
+                        Dim name11 = dr("NAME").ToString()
+
+                        dataTable.Rows.Add(CInt(dr("ID")), dr("NAME").ToString())
+                    End While
+                    dr.Close()
+                End Using
+
+                connection.Close()
+            End Using
+
+            Return dataTable
+        Catch ex As Exception
+            MessageBox.Show("Error executing query: " & ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
 End Class

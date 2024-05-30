@@ -48,7 +48,7 @@
                                Grid.Column="0"
                                Margin="10,9,0,2"
                                />
-                    <Button x:Name="btnMinimize" BorderThickness="0" Content="-" Foreground="White" FontSize="16" FontFamily="Arial" Cursor="Hand" Grid.Column="1" Click="Minimize">
+                    <Button x:Name="btnMinimize" BorderThickness="0" Content="−" Foreground="White" FontSize="16" FontFamily="Arial" Cursor="Hand" Grid.Column="1" Click="Minimize">
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="Background" Value="#28AEED"/>
@@ -70,7 +70,7 @@
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
-                    <Button x:Name="btnClose" BorderThickness="0" Content="X" Foreground="White" FontSize="12" FontFamily="Arial" Cursor="Hand" Grid.Column="2" Click="Close">
+                    <Button x:Name="btnClose" BorderThickness="0" Content="⨉" Foreground="White" FontSize="12" FontFamily="Arial" Cursor="Hand" Grid.Column="2" Click="Close">
                         <Button.Style>
                             <Style TargetType="Button">
                                 <Setter Property="Background" Value="Red"/>

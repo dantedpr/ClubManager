@@ -1,0 +1,5 @@
+C:\Users\dante\Documents\ClubManager\ClubManager\Utils_CS\obj\Debug\net7.0-windows7.0\Utils_CS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dante\Documents\ClubManager\ClubManager\Utils_CS\obj\Debug\net7.0-windows7.0\Utils_CS.AssemblyInfoInputs.cache
+C:\Users\dante\Documents\ClubManager\ClubManager\Utils_CS\obj\Debug\net7.0-windows7.0\Utils_CS.AssemblyInfo.cs
+C:\Users\dante\Documents\ClubManager\ClubManager\Utils_CS\obj\Debug\net7.0-windows7.0\Utils_CS.csproj.CoreCompileInputs.cache
+C:\Users\dante\Documents\ClubManager\ClubManager\Utils_CS\obj\Debug\net7.0-windows7.0\Utils_CS.sourcelink.json

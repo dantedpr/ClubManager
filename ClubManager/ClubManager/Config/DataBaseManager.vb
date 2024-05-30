@@ -1,4 +1,5 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.Data
+Imports System.Data.SqlClient
 
 Public Class DatabaseManager
 
@@ -66,7 +67,6 @@ Public Class DatabaseManager
             Return False
         End Try
     End Function
-
 
 End Class
 
