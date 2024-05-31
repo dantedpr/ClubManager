@@ -1,0 +1,160 @@
+﻿<Window x:Class="ClubRegistration"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="clr-namespace:ClubManager.Controls"
+        mc:Ignorable="d"
+        Title="ClubRegistration" Height="550" Width="800"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent"
+        AllowsTransparency="False"
+        >
+
+    <Border CornerRadius="12">
+        <Border CornerRadius="10"                    
+            BorderThickness="2"
+            Opacity="0.95">
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="Black" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" MouseLeftButtonDown="AllowMovement" Background="#1B7E9F">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="5"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Registrar club"
+                               Foreground="White"
+                               FontWeight="Bold"
+                               FontSize="15"
+                               FontFamily="Arial"
+                               Grid.Column="0"
+                               Margin="10,9,0,2"
+                               />
+                    <Button x:Name="btnMinimize" BorderThickness="0" Content="-" Foreground="White" FontSize="16" FontFamily="Arial" Cursor="Hand" Grid.Column="1" Click="Minimize">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#28AEED"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#278BEF"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="18" Height="18"
+                                        CornerRadius="9"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button x:Name="btnClose" BorderThickness="0" Content="X" Foreground="White" FontSize="12" FontFamily="Arial" Cursor="Hand" Grid.Column="2" Click="Close">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="Red"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="LightBlue"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="18" Height="18" CornerRadius="9" Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Grid>
+
+                <Image Name="IM_Logo" Margin="-32,0,0,-41" Source="/Images/Logo2.png"  Opacity="0.35"  Grid.Row="1" HorizontalAlignment="Left" Width="148" Height="147" VerticalAlignment="Bottom">
+                    <Image.RenderTransform>
+                        <RotateTransform Angle="0"/>
+                    </Image.RenderTransform>
+                    <Image.Clip>
+                        <RectangleGeometry Rect="40,0,340,100"/>
+                    </Image.Clip>
+                </Image>
+
+                <Label Name="LBL_ClubCode" Width="106" Height="30" Content="Código del club:" FontWeight="SemiBold" Margin="64,28,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                <controls:CMText  x:Name="clubCode" Width="190" Margin="43,58,0,0" Grid.Row="1" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" />
+
+                <Label Name="LBL_ClubName" Width="105" Height="30" Content="Nombre del club:" FontWeight="SemiBold" Margin="63,124,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                <controls:CMText  x:Name="clubName" Width="190" Margin="43,154,0,0" Grid.Row="1" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" />
+
+                <Label Name="LBL_ClubAddress" Width="105" Height="30" Content="Dirección:" FontWeight="SemiBold" Margin="65,220,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                <controls:CMText  x:Name="clubAddress" Width="190" Height="30" Margin="43,250,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" />
+
+                <Label Name="LBL_ClubMail" Width="105" Height="30" Content="Email:" FontWeight="SemiBold" Margin="323,124,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                <controls:CMText  x:Name="clubMail" Width="190" Height="30" Margin="0,154,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" />
+
+                <Label Name="LBL_ClubPhone" Height="30" Content="Número de teléfono:" FontWeight="SemiBold" Margin="323,28,0,0" Grid.Row="1" HorizontalAlignment="Left" Width="131" VerticalAlignment="Top" />
+                <controls:CMText  x:Name="clubPhone" Height="30" Width="190" Margin="0,58,0,0" Grid.Row="1" OnlyNumeric="True" AllowNegatives="False" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+
+                <Label Name="LBL_ClubPassword" Width="105" Height="30" Content="Contraseña:" FontWeight="SemiBold" Margin="323,220,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                <PasswordBox  x:Name="clubPassword" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" BorderBrush="#1B7E9F" Width="190" Height="30" Visibility="Visible" Margin="0,250,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Center" />
+                <controls:CMText  x:Name="clubPassUnmask" Width="190" Height="30" Margin="0,250,0,0" Grid.Row="1" Visibility="Hidden" VerticalAlignment="Top" HorizontalAlignment="Center" />
+
+                <controls:CMButton x:Name="BUT_Cancel"  Width="100" Height="30" Margin="0,0,167,30" Border = "2" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom"></controls:CMButton>
+                <controls:CMButton x:Name="BUT_Aceptar"  Width="100" Height="30" Margin="0,0,34,30" Border = "2" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom"></controls:CMButton>
+
+                <Image Name="ID_Club" Source="/Images/id.png" Width="20" Height="20" Margin="44,33,0,0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+                <Image Name="Name_Club" Source="/Images/user.png" Width="20" Height="20" Margin="44,129,0,0" Grid.Row="1" RenderTransformOrigin="0.465,-0.73" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+
+                <Image Name="Address_Club" Source="/Images/location.png" Width="20" Height="20" Margin="44,225,0,0" Grid.Row="1" RenderTransformOrigin="0.415,3.87" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+
+                <Image Name="Email_Club" Source="/Images/email.png" Width="20" Height="20" Margin="303,129,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+
+                <Image Name="Phone_Club" Source="/Images/telephone.png" Width="20" Height="20" Margin="303,33,0,0" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+                <Image Name="Password_Club" Source="/Images/padlock.png" Width="20" Height="20" Margin="303,225,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+
+                <Button Name="btnPassword" Width="30" BorderBrush="Transparent" Height="30" Background="Transparent" Foreground="Transparent" Margin="498,250,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left">
+                    <Image Source="/Images/eye.png" Width="20" Height="20"/>
+                </Button>
+    
+                <CheckBox Name="acceptation1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="44,330,303,140" Grid.Row="1">
+                    <TextBlock>
+                        <Run>Acepto las </Run>
+                        <Run Foreground="#28AEED" >Condiciones del servicio</Run>
+                        <Run> y la </Run>
+                        <Run Foreground="#28AEED">política de privacidad</Run>
+                        <Run> de ClubManager.</Run>
+                    </TextBlock>
+                </CheckBox>
+
+
+                <controls:CMButton x:Name="BUT_Image"  Width="186" Height="30" Click="SeleccionarImagen_Click" HorizontalAlignment="Left" Margin="569,234,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+                <Image x:Name="imagenSeleccionada" Source="/Images/Logo2.png" Stretch="Uniform" Margin="578,55,0,0" Width="168" Height="168" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+
+            </Grid>
+        </Border>
+
+    </Border>
+</Window>
