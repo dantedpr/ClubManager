@@ -135,3 +135,4 @@ C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\bin\Debug\Utils_CS.
 C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\bin\Debug\Utils_CS.pdb
 C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\bin\Debug\Utils_CS.exe.config
 C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\ClubManager.vbproj.ResolveComReference.cache
+C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\Application.baml

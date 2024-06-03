@@ -130,12 +130,12 @@ Namespace Controls
 
             ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
             Me.ExportToExcel = True
-            Me.MyDataGrid.IsReadOnly = True
-            Me.MyDataGrid.CanUserAddRows = False
-            Me.MyDataGrid.CanUserDeleteRows = False
-            Me.MyDataGrid.CanUserReorderColumns = True
-            Me.MyDataGrid.CanUserResizeColumns = True
-            Me.MyDataGrid.CanUserSortColumns = True
+            Me.DG.IsReadOnly = True
+            Me.DG.CanUserAddRows = False
+            Me.DG.CanUserDeleteRows = False
+            Me.DG.CanUserResizeRows = False
+            Me.DG.CanUserSortColumns = True
+            Me.DG.CanUserResizeColumns = True
 
             Me.ExcelBtn.ImageName = "excel.png"
             Me.ExcelBtn.ToolTip = "Exportar a excel"
@@ -170,7 +170,7 @@ Namespace Controls
                         col1 = New DataGridTextColumn
                 End Select
 
-                If biding = "" Then
+                If Not biding = "" Then
                     Dim v = New Data.Binding(biding)
                     v.Mode = bindingmode
 
@@ -192,7 +192,7 @@ Namespace Controls
                     col1.Binding = v
                 End If
 
-                col1.Width = width
+                'col1.Width = width
                 If col1.Width = New System.Windows.Controls.DataGridLength(0).Value Then
                     col1.Visibility = Visibility.Collapsed
                 End If
@@ -207,12 +207,18 @@ Namespace Controls
 
                 Select Case aligment
                     Case System.Windows.HorizontalAlignment.Left
+                        st = New Style(GetType(System.Windows.Controls.DataGridCell), Application.Current.TryFindResource("LeftCell"))
+                        col1.HeaderStyle = Application.Current.TryFindResource("LeftCellHead")
                         x.Padding = padL
                         x.Content = header
                     Case System.Windows.HorizontalAlignment.Right
+                        st = New Style(GetType(System.Windows.Controls.DataGridCell), Application.Current.TryFindResource("LeftCell"))
+                        col1.HeaderStyle = Application.Current.TryFindResource("LeftCellHead")
                         x.Padding = padR
                         x.Content = header
                     Case System.Windows.HorizontalAlignment.Center
+                        st = New Style(GetType(System.Windows.Controls.DataGridCell), Application.Current.TryFindResource("LeftCell"))
+                        col1.HeaderStyle = Application.Current.TryFindResource("LeftCellHead")
                         x.Padding = padC
                         x.Content = header
                 End Select
@@ -234,7 +240,7 @@ Namespace Controls
                 End If
 
                 col1.CellStyle = st
-                MyDataGrid.Columns.Add(col1)
+                DG.Columns.Add(col1)
                 Return col1
             Catch ex As Exception
 

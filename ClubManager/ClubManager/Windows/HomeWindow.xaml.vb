@@ -72,13 +72,17 @@ Class HomeWindow
         dt = Club.GetAllClubs()
 
         Dim xquery = From a In dt.AsEnumerable
-                     Select New With {.ID = a.Item("ID"), .NAME = a.Item("NAME")}
+                     Select New With {.ID = a.Item("ID"), .NAME = a.Item("NAME")
+        }
 
 
-        Info_Grid.MyDataGrid.ItemsSource = xquery
-        Info_Grid.MyDataGrid.Columns.Clear()
-        Info_Grid.AddColumn("ID", "ID", 70, True, System.Windows.HorizontalAlignment.Left)
-        Info_Grid.AddColumn("NAME", "NAME", 70, True, System.Windows.HorizontalAlignment.Left)
+        For Each X In xquery
+            Console.WriteLine(X.ID)
+        Next
+        Info_Grid.DG.ItemsSource = xquery
+        Info_Grid.DG.Columns.Clear()
+        Info_Grid.AddColumn("ID", "ID", 50, True, System.Windows.HorizontalAlignment.Left, "TEXT")
+        Info_Grid.AddColumn("NAME", "NAME", 100, True, System.Windows.HorizontalAlignment.Left, "TEXT")
         Info_Grid.GridCounter()
 
     End Sub
