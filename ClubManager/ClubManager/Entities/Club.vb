@@ -134,7 +134,7 @@ Public Class Club
             Dim dataTable As New DataTable()
 
             ' Agregar columnas al DataTable (por ejemplo)
-            dataTable.Columns.Add("ID", GetType(Integer))
+            dataTable.Columns.Add("ID", GetType(String))
             dataTable.Columns.Add("NAME", GetType(String))
             Using connection As New SqlConnection(db.connectionString)
                 ' Open connection
@@ -145,9 +145,7 @@ Public Class Club
                     Dim dr As SqlDataReader = command.ExecuteReader()
                     While dr.Read()
 
-                        Dim name11 = dr("NAME").ToString()
-
-                        dataTable.Rows.Add(CInt(dr("ID")), dr("NAME").ToString())
+                        dataTable.Rows.Add(dr("ID").ToString(), dr("NAME").ToString())
                     End While
                     dr.Close()
                 End Using
