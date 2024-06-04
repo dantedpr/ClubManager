@@ -60,12 +60,11 @@
                 Club.LoadClub(txtUser.Text)
 
 
-                Dim w As New FrameWindow
-                w.Show()
+                FrameWindow.Instance.Show()
 
                 Dim w1 As New HomeWindow
-                w.CleanWindow()
-                w.Content.Children.Add(w1)
+                FrameWindow.Instance.CleanWindow()
+                FrameWindow.Instance.Content.Children.Add(w1)
                 w1.Load()
 
                 Me.Close()

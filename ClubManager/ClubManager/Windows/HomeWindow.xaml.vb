@@ -67,6 +67,8 @@ Class HomeWindow
         BUT_Club.LBL_Text.FontSize = 20
         BUT_Club.LBL_Text.Margin = New Thickness(15, 1, 0, 0)
 
+        AddHandler BUT_Club.Click, AddressOf EditMyClub
+
         Dim dt As New DataTable()
 
         dt = Club.GetAllClubs()
@@ -75,10 +77,6 @@ Class HomeWindow
                      Select New With {.ID = a.Item("ID"), .NAME = a.Item("NAME")
         }
 
-
-        For Each X In xquery
-            Console.WriteLine(X.ID)
-        Next
         Info_Grid.DG.ItemsSource = xquery
         Info_Grid.DG.Columns.Clear()
         Info_Grid.AddColumn("ID", "ID", 50, True, System.Windows.HorizontalAlignment.Left, "TEXT")
@@ -87,6 +85,15 @@ Class HomeWindow
 
     End Sub
 
+    Public Sub EditMyClub()
+
+        Dim w = FrameWindow.Instance
+        w.CleanWindow()
+        Dim w1 As New EditClub
+        w.Content.Children.Add(w1)
+
+        w1.Load()
+    End Sub
 
     Public Sub RegisterAccount()
 

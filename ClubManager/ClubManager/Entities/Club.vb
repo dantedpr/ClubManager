@@ -93,6 +93,32 @@ Public Class Club
 
     End Sub
 
+    Public Shared Sub UpdateClub(name As String, address As String, mail As String, phone As String)
+
+        Try
+            Dim query As String = "UPDATE Club SET [NAME] = @p1, [ADDRESS] = @p2, [MAIL] = @p3, [PHONE] = @p4 WHERE ID = " & Club.ID & ""
+
+            Dim db As New DatabaseManager
+
+            Using connection As New SqlConnection(db.connectionString)
+                connection.Open()
+
+                Using command As New SqlCommand(query, connection)
+                    command.Parameters.AddWithValue("@p1", name)
+                    command.Parameters.AddWithValue("@p2", address)
+                    command.Parameters.AddWithValue("@p3", mail)
+                    command.Parameters.AddWithValue("@p4", phone)
+                    command.ExecuteScalar()
+                End Using
+            End Using
+
+            LoadClub(Club.Code)
+        Catch ex As Exception
+            Console.WriteLine("Error al actualizar el club: " & ex.Message)
+        End Try
+
+    End Sub
+
     Public Shared Sub LoadClub(code As String)
 
         Try
@@ -145,7 +171,9 @@ Public Class Club
                     Dim dr As SqlDataReader = command.ExecuteReader()
                     While dr.Read()
 
-                        dataTable.Rows.Add(dr("ID").ToString(), dr("NAME").ToString())
+                        Dim name11 = dr("NAME").ToString()
+
+                        dataTable.Rows.Add(CInt(dr("ID")), dr("NAME").ToString())
                     End While
                     dr.Close()
                 End Using

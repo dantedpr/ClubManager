@@ -1,7 +1,9 @@
 ﻿Imports System.Timers
 Imports System.Windows.Threading
 
-Class FrameWindow
+Public Class FrameWindow
+
+    Inherits Window
 
     Public Property username As String
     Private Property pass As String
@@ -9,6 +11,19 @@ Class FrameWindow
     Dim WithEvents Timer1 As DispatcherTimer
 
     Private previousState As WindowState
+
+    Private Shared _instance As FrameWindow
+
+    ' Método público para obtener la instancia
+    Public Shared ReadOnly Property Instance As FrameWindow
+        Get
+            If _instance Is Nothing Then
+                _instance = New FrameWindow()
+            End If
+            Return _instance
+        End Get
+    End Property
+
     Public Sub New()
 
         ' Esta llamada es exigida por el diseñador.
