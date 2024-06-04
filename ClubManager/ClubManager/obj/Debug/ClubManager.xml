@@ -94,6 +94,16 @@ ClubRegistration
 InitializeComponent
 </summary>
 </member>
+<member name="T:ClubManager.EditClub">
+<summary>
+EditClub
+</summary>
+</member>
+<member name="M:ClubManager.EditClub.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
 <member name="T:ClubManager.HomeWindow">
 <summary>
 HomeWindow
