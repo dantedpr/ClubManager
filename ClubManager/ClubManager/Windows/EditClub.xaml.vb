@@ -32,6 +32,13 @@ Class EditClub
         BUT_Cancel.ImageName = "cancel.png"
         BUT_Cancel.ButText = "Cancelar"
 
+
+        AddHandler BUT_Delete.Click, AddressOf DeleteClub
+        BUT_Delete.Background = New SolidColorBrush(Colors.White)
+        BUT_Delete.GetBackground = New SolidColorBrush(Colors.WhiteSmoke)
+        BUT_Delete.ImageName = "delete.png"
+        BUT_Delete.ButText = "Dar de baja suscripción"
+
         BUT_Image.Background = New SolidColorBrush(Colors.White)
         BUT_Image.GetBackground = New SolidColorBrush(Colors.LightBlue)
         BUT_Image.ImageName = "upload.png"
@@ -57,6 +64,22 @@ Class EditClub
         w.Content.Children.Add(w1)
         w1.Load()
 
+    End Sub
+
+    Private Sub DeleteClub(sender As Object, e As RoutedEventArgs)
+        If MessageBox.Show("¿Está seguro que desea cancelar la suscripción a la apliación?", "Eliminar club", MessageBoxButton.YesNo, MessageBoxImage.Information) = MessageBoxResult.Yes Then
+            Club.Delete()
+
+            MessageBox.Show("Información del club actualizada con éxito.", "Club", MessageBoxButton.OK, MessageBoxImage.Information)
+
+            System.Windows.Application.Current.Shutdown()
+        Else
+
+            e.Handled = True
+            Exit Sub
+        End If
+
+        e.Handled = True
     End Sub
 
     Private Sub SaveClub(sender As Object, e As RoutedEventArgs)
