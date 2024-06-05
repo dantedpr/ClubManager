@@ -62,9 +62,17 @@ Class EditClub
     Private Sub SaveClub(sender As Object, e As RoutedEventArgs)
         If MessageBox.Show("¿Está seguro que desea actualizar la información del club?", "Editar club", MessageBoxButton.YesNo, MessageBoxImage.Information) = MessageBoxResult.Yes Then
             Club.UpdateClub(clubName.Text, clubAddress.Text, clubMail.Text, clubPhone.Text)
+            If clubPassUnmask.Visibility = Visibility.Visible Then
+                Club.UpdatePass(clubPassUnmask.Text)
+            Else
+                Club.UpdatePass(clubPassword.Password)
+            End If
+            Club.LoadClub(Club.Code)
+            FrameWindow.Instance.LabelClub.Content = Club.Name
+            MessageBox.Show("Información del club actualizada con éxito.", "Club", MessageBoxButton.OK, MessageBoxImage.Information)
         Else
 
-            e.Handled = True
+                e.Handled = True
             Exit Sub
         End If
 
