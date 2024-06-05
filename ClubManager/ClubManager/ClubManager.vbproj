@@ -66,6 +66,7 @@
       <HintPath>..\packages\CefSharp.Common.124.3.80\lib\net462\CefSharp.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="PresentationFramework.Aero" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
@@ -123,6 +124,9 @@
     <Compile Include="Windows\ClubRegistration.xaml.vb">
       <DependentUpon>ClubRegistration.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\EditClub.xaml.vb">
+      <DependentUpon>EditClub.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\HomeWindow.xaml.vb">
       <DependentUpon>HomeWindow.xaml</DependentUpon>
     </Compile>
@@ -157,6 +161,10 @@
     <Page Include="Windows\ClubRegistration.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\EditClub.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Windows\HomeWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

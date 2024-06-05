@@ -93,6 +93,53 @@ Public Class Club
 
     End Sub
 
+    Public Shared Sub UpdatePass(pass As String)
+
+        Try
+            Dim query As String = "UPDATE ClubPass SET [CLUB_PASS] = @p1 WHERE CLUB_CODE = '" & Club.Code & "'"
+
+            Dim db As New DatabaseManager
+
+            Using connection As New SqlConnection(db.connectionString)
+                connection.Open()
+
+                Using command As New SqlCommand(query, connection)
+                    command.Parameters.AddWithValue("@p1", pass)
+                    command.ExecuteScalar()
+                End Using
+            End Using
+
+        Catch ex As Exception
+            Console.WriteLine("Error al actualizar el club: " & ex.Message)
+        End Try
+
+    End Sub
+
+    Public Shared Sub UpdateClub(name As String, address As String, mail As String, phone As String)
+
+        Try
+            Dim query As String = "UPDATE Club SET [NAME] = @p1, [ADDRESS] = @p2, [MAIL] = @p3, [PHONE] = @p4 WHERE ID = " & Club.ID & ""
+
+            Dim db As New DatabaseManager
+
+            Using connection As New SqlConnection(db.connectionString)
+                connection.Open()
+
+                Using command As New SqlCommand(query, connection)
+                    command.Parameters.AddWithValue("@p1", name)
+                    command.Parameters.AddWithValue("@p2", address)
+                    command.Parameters.AddWithValue("@p3", mail)
+                    command.Parameters.AddWithValue("@p4", phone)
+                    command.ExecuteScalar()
+                End Using
+            End Using
+
+        Catch ex As Exception
+            Console.WriteLine("Error al actualizar el club: " & ex.Message)
+        End Try
+
+    End Sub
+
     Public Shared Sub LoadClub(code As String)
 
         Try
@@ -134,7 +181,7 @@ Public Class Club
             Dim dataTable As New DataTable()
 
             ' Agregar columnas al DataTable (por ejemplo)
-            dataTable.Columns.Add("ID", GetType(Integer))
+            dataTable.Columns.Add("ID", GetType(String))
             dataTable.Columns.Add("NAME", GetType(String))
             Using connection As New SqlConnection(db.connectionString)
                 ' Open connection

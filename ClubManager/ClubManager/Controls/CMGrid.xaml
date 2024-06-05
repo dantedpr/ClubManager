@@ -17,7 +17,7 @@
         <DataGrid AutoGenerateColumns="False" Grid.Row="1" Margin="5,5,5,0" Name="MyDataGrid" HorizontalAlignment="Stretch" ScrollViewer.CanContentScroll="True" Width="Auto"
                   ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto" AlternatingRowBackground="GhostWhite" AlternationCount="2">
             <DataGrid.Resources>
-                <SolidColorBrush Color="#B7E6F5" x:Key="{x:Static SystemColors.HighlightBrushKey}"/>
+                <SolidColorBrush Color="#1B7E9F" x:Key="{x:Static SystemColors.HighlightBrushKey}"/>
             </DataGrid.Resources>
             <DataGrid.RowDetailsTemplate>
                 <DataTemplate>
@@ -28,8 +28,8 @@
 
         <Border Name="BorderGrid" Grid.Row="0" Height="40" BorderThickness="1" BorderBrush="LightGray" Margin="5,5,5,0" HorizontalAlignment="Stretch" VerticalAlignment="Top">
             <Grid>
-                <StackPanel Name ="Right" Orientation="Horizontal" Height="30" HorizontalAlignment="Right" Margin="5,5,5,0" VerticalAlignment="Top" Width="30">
-                    <controls:CMButton Height="30" HorizontalAlignment="Right" x:Name="ExcelBtn" VerticalAlignment="Top" Width="30" />
+                <StackPanel Name ="Right" Orientation="Horizontal" Height="30" HorizontalAlignment="Right" Margin="5,5,10,0" VerticalAlignment="Top" Width="40">
+                    <controls:CMButton Height="30" HorizontalAlignment="Right" x:Name="ExcelBtn" VerticalAlignment="Top" Width="40" />
                 </StackPanel>
             </Grid>
         </Border>
