@@ -69,12 +69,17 @@
             <controls:CMButton x:Name="BUT_Cancel"  Width="100" Height="30" Margin="0,0,167,30" Border = "2" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom"></controls:CMButton>
             <controls:CMButton x:Name="BUT_Aceptar"  Width="100" Height="30" Margin="0,0,34,30" Border = "2" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom"></controls:CMButton>
 
-            <StackPanel Orientation="Vertical" Height="300" Width="500" Margin="20,280,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
-                <controls:CMGrid x:Name="ClubGrid" Width="480" Height="290">
-                    
+            <StackPanel Orientation="Vertical" Height="324" Width="530" Margin="0,256,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <controls:CMGrid x:Name="ClubGrid" Width="501" Height="257">
+
                 </controls:CMGrid>
+
+                <StackPanel Orientation="Horizontal" Height="32" Margin="15,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <Label Name="LBL_Delete" Height="30" Content="Para dar de baja el club, haga click sobre el botón: " Width="290" FontWeight="SemiBold" Margin="0,0,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                    <controls:CMButton x:Name="BUT_Delete"  Width="170" Height="30" Margin="20,0,0,0" Border = "2" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom"></controls:CMButton>
+                </StackPanel>
             </StackPanel>
-            
+
         </Grid>
 
     </Grid>

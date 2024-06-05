@@ -115,6 +115,113 @@ Public Class Club
 
     End Sub
 
+    Public Shared Sub Delete()
+
+        Try
+
+            DeleteTeams()
+            DeletePlayers()
+            DeleteMaterial()
+            DeleteClubPass()
+
+            Dim query As String = "DELETE [CLUB] WHERE CODE = '" & Club.Code & "'"
+
+            Dim db As New DatabaseManager
+
+            Using connection As New SqlConnection(db.connectionString)
+                connection.Open()
+
+                Using command As New SqlCommand(query, connection)
+                    command.ExecuteScalar()
+                End Using
+            End Using
+
+        Catch ex As Exception
+            Console.WriteLine("Error al eliminar el club: " & ex.Message)
+        End Try
+
+    End Sub
+
+    Private Shared Sub DeleteTeams()
+        Try
+
+            Dim query As String = "DELETE [Teams] WHERE CLUB_ID = " & Club.ID & ""
+
+            Dim db As New DatabaseManager
+
+            Using connection As New SqlConnection(db.connectionString)
+                connection.Open()
+
+                Using command As New SqlCommand(query, connection)
+                    command.ExecuteScalar()
+                End Using
+            End Using
+
+        Catch ex As Exception
+            Console.WriteLine("Error al eliminar el club: " & ex.Message)
+        End Try
+    End Sub
+
+    Private Shared Sub DeletePlayers()
+        Try
+
+            Dim query As String = "DELETE [Players] WHERE CLUB_ID = " & Club.ID & ""
+
+            Dim db As New DatabaseManager
+
+            Using connection As New SqlConnection(db.connectionString)
+                connection.Open()
+
+                Using command As New SqlCommand(query, connection)
+                    command.ExecuteScalar()
+                End Using
+            End Using
+
+        Catch ex As Exception
+            Console.WriteLine("Error al eliminar el club: " & ex.Message)
+        End Try
+    End Sub
+
+    Private Shared Sub DeleteMaterial()
+        Try
+
+            Dim query As String = "DELETE [Material] WHERE CLUB_ID = " & Club.ID & ""
+
+            Dim db As New DatabaseManager
+
+            Using connection As New SqlConnection(db.connectionString)
+                connection.Open()
+
+                Using command As New SqlCommand(query, connection)
+                    command.ExecuteScalar()
+                End Using
+            End Using
+
+        Catch ex As Exception
+            Console.WriteLine("Error al eliminar el club: " & ex.Message)
+        End Try
+    End Sub
+
+    Private Shared Sub DeleteClubPass()
+        Try
+
+            Dim query As String = "DELETE [ClubPass] WHERE CLUB_CODE = '" & Club.Code & "'"
+
+            Dim db As New DatabaseManager
+
+            Using connection As New SqlConnection(db.connectionString)
+                connection.Open()
+
+                Using command As New SqlCommand(query, connection)
+                    command.ExecuteScalar()
+                End Using
+            End Using
+
+        Catch ex As Exception
+            Console.WriteLine("Error al eliminar el club: " & ex.Message)
+        End Try
+    End Sub
+
     Public Shared Sub UpdateClub(name As String, address As String, mail As String, phone As String)
 
         Try
