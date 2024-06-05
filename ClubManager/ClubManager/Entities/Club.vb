@@ -93,6 +93,28 @@ Public Class Club
 
     End Sub
 
+    Public Shared Sub UpdatePass(pass As String)
+
+        Try
+            Dim query As String = "UPDATE ClubPass SET [CLUB_PASS] = @p1 WHERE CLUB_CODE = '" & Club.Code & "'"
+
+            Dim db As New DatabaseManager
+
+            Using connection As New SqlConnection(db.connectionString)
+                connection.Open()
+
+                Using command As New SqlCommand(query, connection)
+                    command.Parameters.AddWithValue("@p1", pass)
+                    command.ExecuteScalar()
+                End Using
+            End Using
+
+        Catch ex As Exception
+            Console.WriteLine("Error al actualizar el club: " & ex.Message)
+        End Try
+
+    End Sub
+
     Public Shared Sub UpdateClub(name As String, address As String, mail As String, phone As String)
 
         Try
@@ -112,7 +134,6 @@ Public Class Club
                 End Using
             End Using
 
-            LoadClub(Club.Code)
         Catch ex As Exception
             Console.WriteLine("Error al actualizar el club: " & ex.Message)
         End Try
