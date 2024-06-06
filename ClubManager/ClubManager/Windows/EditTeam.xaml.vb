@@ -53,7 +53,7 @@ Public Class EditTeam
         teamCategory.Items.Add("Prebenjamín")
         teamCategory.Items.Add("Benjamín")
         teamCategory.Items.Add("Alevín")
-        teamCategory.Items.Add("Infatil")
+        teamCategory.Items.Add("Infantil")
         teamCategory.Items.Add("Cadete")
         teamCategory.Items.Add("Juvenil")
         teamCategory.Items.Add("Amateur")

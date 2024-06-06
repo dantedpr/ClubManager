@@ -10,7 +10,6 @@ Class TeamsWindow
 
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
-        Load()
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
 
     End Sub
@@ -24,18 +23,43 @@ Class TeamsWindow
         BUT_NewTeam.ImageName = "plus.png"
         BUT_NewTeam.ButText = "Añadir plantilla"
 
+        AddHandler BUT_Delete.Click, AddressOf DeleteTeam
+        BUT_Delete.Background = New SolidColorBrush(Colors.White)
+        BUT_Delete.GetBackground = New SolidColorBrush(Colors.WhiteSmoke)
+        BUT_Delete.ImageName = "delete.png"
+        BUT_Delete.ButText = "Eliminar plantilla"
+
+        AddHandler BUT_Search.Click, AddressOf Seach
+        BUT_Search.Background = New SolidColorBrush(Colors.White)
+        BUT_Search.GetBackground = New SolidColorBrush(Colors.White)
+        BUT_Search.ImageName = "transparency.png"
+        BUT_Search.ButText = "Buscar"
+
         AddHandler Me.Info_Grid.DG.MouseDoubleClick, AddressOf EditTeam
 
+        teamCategory.Items.Clear()
+        teamCategory.Items.Add("")
+        teamCategory.Items.Add("Promesas")
+        teamCategory.Items.Add("Prebenjamín")
+        teamCategory.Items.Add("Benjamín")
+        teamCategory.Items.Add("Alevín")
+        teamCategory.Items.Add("Infantil")
+        teamCategory.Items.Add("Cadete")
+        teamCategory.Items.Add("Juvenil")
+        teamCategory.Items.Add("Amateur")
+        teamCategory.SelectedIndex = 0
+        AddHandler teamCategory.SelectionChanged, AddressOf Seach
+        AddHandler teamName.PreviewKeyDown, AddressOf Seach2
         LoadTeams()
 
     End Sub
 
-    Public Sub LoadTeams()
+    Private Sub LoadTeams()
 
 
         Dim dt As New DataTable()
 
-        dt = Club.GetAllTeams(0, "", "")
+        dt = Club.GetAllTeams(teamName.Text, teamCategory.SelectedItem.ToString())
 
         Dim xquery = From a In dt.AsEnumerable
                      Select New With {.ID = a.Item("ID"), .NAME = a.Item("NAME"), .CATEGORY = a.Item("CATEGORY"), .DIVISION = a.Item("DIVISION"), .LETTER = a.Item("LETTER")
@@ -61,6 +85,17 @@ Class TeamsWindow
         LoadTeams()
     End Sub
 
+    Private Sub Seach(sender As Object, e As RoutedEventArgs)
+        LoadTeams()
+        e.Handled = True
+    End Sub
+
+    Private Sub Seach2(sender As Object, e As Input.KeyEventArgs)
+        If e.Key = Key.Return Then
+            LoadTeams()
+        End If
+    End Sub
+
     Private Sub EditTeam(sender As Object, e As RoutedEventArgs)
 
         Dim dg = Me.Info_Grid.DG
@@ -77,6 +112,32 @@ Class TeamsWindow
         End If
 
         LoadTeams()
+    End Sub
+
+    Private Sub DeleteTeam(sender As Object, e As RoutedEventArgs)
+        Dim dg = Me.Info_Grid.DG
+
+        If dg.SelectedItems.Count > 0 Then
+            If MessageBox.Show("¿Está seguro que desea eliminar la plantilla?", "Eliminar plantilla", CType(MessageBoxButton.YesNo, MessageBoxButtons), CType(MessageBoxImage.Information, MessageBoxIcon)) = MessageBoxResult.Yes Then
+                Dim drv = Me.Info_Grid.DG.SelectedItem
+                Dim team As New Team()
+                team.LoadTeam(drv.ID)
+                team.DeleteTeam()
+                e.Handled = True
+
+                LoadTeams()
+            Else
+
+                e.Handled = True
+                Exit Sub
+            End If
+
+            e.Handled = True
+        Else
+            MessageBox.Show("Debe seleccionar primero una plantilla de la tabla.", "Eliminar plantilla", CType(MessageBoxButton.OK, MessageBoxButtons), CType(MessageBoxImage.Information, MessageBoxIcon))
+        End If
+
+        e.Handled = True
     End Sub
 
 End Class
