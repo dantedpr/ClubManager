@@ -346,10 +346,19 @@ Public Class Club
         End Try
     End Function
 
-    Public Shared Function GetAllTeams(age As Integer, name As String, team As String) As DataTable
+    Public Shared Function GetAllTeams(name As String, cat As String) As DataTable
         Try
 
             Dim query = "SELECT * FROM Teams WHERE CLUB_ID = " & Club.ID
+
+            If name <> "" Then
+                query = query & " AND NAME LIKE '" & name & "%' "
+            End If
+
+            If cat <> "" Then
+                query = query & " AND CATEGORY = '" & cat & "' "
+            End If
+
             Dim exists = False
             Dim db As New DatabaseManager
             Dim dataTable As New DataTable()

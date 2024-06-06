@@ -121,5 +121,50 @@ Public Class Team
         Letter = reader("Letter").ToString()
     End Sub
 
+    Public Sub DeleteTeam()
+
+        Try
+
+            UpdatePlayers()
+
+            Dim query As String = "DELETE [Teams] WHERE ID = " & ID & ""
+
+            Dim db As New DatabaseManager
+
+            Using connection As New SqlConnection(db.connectionString)
+                connection.Open()
+
+                Using command As New SqlCommand(query, connection)
+                    command.ExecuteScalar()
+                End Using
+            End Using
+
+        Catch ex As Exception
+            Console.WriteLine("Error al eliminar la plantilla: " & ex.Message)
+        End Try
+
+    End Sub
+
+    Public Sub UpdatePlayers()
+
+        Try
+            Dim query As String = "UPDATE Players SET [TEAM_ID] = @p1 WHERE TEAM_ID = " & ID & ""
+
+            Dim db As New DatabaseManager
+
+            Using connection As New SqlConnection(db.connectionString)
+                connection.Open()
+
+                Using command As New SqlCommand(query, connection)
+                    command.Parameters.AddWithValue("@p1", DBNull.Value)
+                    command.ExecuteScalar()
+                End Using
+            End Using
+
+        Catch ex As Exception
+            Console.WriteLine("Error al actualizar la plantilla: " & ex.Message)
+        End Try
+
+    End Sub
 
 End Class
