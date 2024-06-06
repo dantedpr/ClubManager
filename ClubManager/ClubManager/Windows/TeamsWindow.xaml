@@ -14,7 +14,7 @@
         <Grid Grid.Row="0" Name="MainGrid" Background="White" HorizontalAlignment="Center" Width="896">
             <StackPanel Name="MenuBar" Orientation="Vertical"  HorizontalAlignment="Center" Width="876">
                 <StackPanel Name="Menu1" Orientation="Horizontal" Height="180"  HorizontalAlignment="Left" Margin="10,0,0,0">
-                    <controls:CMButton x:Name="BUT_NewTeam"  Width="139" Height="30" Margin="10,20,0,0" Border = "2" VerticalAlignment="Top"/>
+                    <controls:CMButton x:Name="BUT_NewTeam"  Width="139" Height="30" Margin="10,20,0,0" Border = "2" VerticalAlignment="Top" />
                 </StackPanel>
                 <StackPanel Name="Menu2" Orientation="Vertical" Height="600"  HorizontalAlignment="Center">
                     <controls:CMGrid x:Name="Info_Grid" Height="408" Width="863" ></controls:CMGrid>
