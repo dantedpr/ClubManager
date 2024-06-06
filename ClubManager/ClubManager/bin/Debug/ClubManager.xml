@@ -104,6 +104,16 @@ EditClub
 InitializeComponent
 </summary>
 </member>
+<member name="T:ClubManager.PlayersWindow">
+<summary>
+PlayersWindow
+</summary>
+</member>
+<member name="M:ClubManager.PlayersWindow.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
 <member name="T:ClubManager.HomeWindow">
 <summary>
 HomeWindow

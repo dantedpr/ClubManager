@@ -316,4 +316,33 @@ Public Class Club
         End Try
     End Function
 
+    Public Shared Function GetAllPlayers(age As Integer, name As String, team As String) As DataTable
+        Try
+
+            Dim query = "SELECT * FROM Players WHERE CLUB_ID = " & Club.ID
+            Dim exists = False
+            Dim db As New DatabaseManager
+            Dim dataTable As New DataTable()
+
+            Using connection As New SqlConnection(db.connectionString)
+                ' Open connection
+                connection.Open()
+
+                Using command As New SqlCommand(query, connection)
+
+                    Dim dr As SqlDataReader = command.ExecuteReader()
+                    dataTable.Load(dr)
+                    dr.Close()
+                End Using
+
+                connection.Close()
+            End Using
+
+            Return dataTable
+        Catch ex As Exception
+            MessageBox.Show("Error executing query: " & ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
 End Class
