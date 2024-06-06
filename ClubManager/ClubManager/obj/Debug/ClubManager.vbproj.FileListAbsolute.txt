@@ -140,3 +140,5 @@ C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\Windows\E
 C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\Windows\EditClub.baml
 C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\Windows\PlayersWindow.g.vb
 C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\Windows\PlayersWindow.baml
+C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\Windows\TeamsWindow.g.vb
+C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\Windows\TeamsWindow.baml

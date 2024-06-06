@@ -127,6 +127,9 @@
     <Compile Include="Windows\EditClub.xaml.vb">
       <DependentUpon>EditClub.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\TeamsWindow.xaml.vb">
+      <DependentUpon>TeamsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\PlayersWindow.xaml.vb">
       <DependentUpon>PlayersWindow.xaml</DependentUpon>
     </Compile>
@@ -166,6 +169,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\EditClub.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\TeamsWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
