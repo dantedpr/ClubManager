@@ -84,6 +84,16 @@ CMText
 InitializeComponent
 </summary>
 </member>
+<member name="T:ClubManager.EditTeam">
+<summary>
+EditTeam
+</summary>
+</member>
+<member name="M:ClubManager.EditTeam.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
 <member name="T:ClubManager.ClubRegistration">
 <summary>
 ClubRegistration
@@ -100,6 +110,16 @@ EditClub
 </summary>
 </member>
 <member name="M:ClubManager.EditClub.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:ClubManager.TeamsWindow">
+<summary>
+TeamsWindow
+</summary>
+</member>
+<member name="M:ClubManager.TeamsWindow.InitializeComponent">
 <summary>
 InitializeComponent
 </summary>

@@ -121,11 +121,18 @@
       <DependentUpon>CMText.xaml</DependentUpon>
     </Compile>
     <Compile Include="Entities\Club.vb" />
+    <Compile Include="Entities\Team.vb" />
+    <Compile Include="Windows\EditTeam.xaml.vb">
+      <DependentUpon>EditTeam.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\ClubRegistration.xaml.vb">
       <DependentUpon>ClubRegistration.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\EditClub.xaml.vb">
       <DependentUpon>EditClub.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\TeamsWindow.xaml.vb">
+      <DependentUpon>TeamsWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\PlayersWindow.xaml.vb">
       <DependentUpon>PlayersWindow.xaml</DependentUpon>
@@ -161,11 +168,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Windows\EditTeam.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Windows\ClubRegistration.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\EditClub.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\TeamsWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -345,6 +360,18 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\home2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\options-lines.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\trophy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\transparency.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

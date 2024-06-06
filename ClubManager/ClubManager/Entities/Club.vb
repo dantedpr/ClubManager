@@ -1,5 +1,6 @@
 ﻿Imports System.Data
 Imports System.Data.SqlClient
+Imports System.Windows.Forms
 
 Public Class Club
 
@@ -320,6 +321,44 @@ Public Class Club
         Try
 
             Dim query = "SELECT * FROM Players WHERE CLUB_ID = " & Club.ID
+            Dim exists = False
+            Dim db As New DatabaseManager
+            Dim dataTable As New DataTable()
+
+            Using connection As New SqlConnection(db.connectionString)
+                ' Open connection
+                connection.Open()
+
+                Using command As New SqlCommand(query, connection)
+
+                    Dim dr As SqlDataReader = command.ExecuteReader()
+                    dataTable.Load(dr)
+                    dr.Close()
+                End Using
+
+                connection.Close()
+            End Using
+
+            Return dataTable
+        Catch ex As Exception
+            MessageBox.Show("Error executing query: " & ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    Public Shared Function GetAllTeams(name As String, cat As String) As DataTable
+        Try
+
+            Dim query = "SELECT * FROM Teams WHERE CLUB_ID = " & Club.ID
+
+            If name <> "" Then
+                query = query & " AND NAME LIKE '" & name & "%' "
+            End If
+
+            If cat <> "" Then
+                query = query & " AND CATEGORY = '" & cat & "' "
+            End If
+
             Dim exists = False
             Dim db As New DatabaseManager
             Dim dataTable As New DataTable()
