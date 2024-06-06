@@ -192,7 +192,7 @@ Namespace Controls
                     col1.Binding = v
                 End If
 
-                'col1.Width = width
+                col1.Width = width
                 If col1.Width = New System.Windows.Controls.DataGridLength(0).Value Then
                     col1.Visibility = Visibility.Collapsed
                 End If

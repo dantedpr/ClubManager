@@ -84,6 +84,16 @@ CMText
 InitializeComponent
 </summary>
 </member>
+<member name="T:ClubManager.EditTeam">
+<summary>
+EditTeam
+</summary>
+</member>
+<member name="M:ClubManager.EditTeam.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
 <member name="T:ClubManager.ClubRegistration">
 <summary>
 ClubRegistration

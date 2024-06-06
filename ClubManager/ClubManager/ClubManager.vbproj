@@ -121,6 +121,10 @@
       <DependentUpon>CMText.xaml</DependentUpon>
     </Compile>
     <Compile Include="Entities\Club.vb" />
+    <Compile Include="Entities\Team.vb" />
+    <Compile Include="Windows\EditTeam.xaml.vb">
+      <DependentUpon>EditTeam.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\ClubRegistration.xaml.vb">
       <DependentUpon>ClubRegistration.xaml</DependentUpon>
     </Compile>
@@ -164,6 +168,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Windows\EditTeam.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Windows\ClubRegistration.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -352,6 +360,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\home2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\options-lines.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\trophy.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -1,4 +1,5 @@
 ﻿Imports System.Data
+Imports System.Windows.Forms
 
 Class TeamsWindow
 
@@ -23,12 +24,13 @@ Class TeamsWindow
         BUT_NewTeam.ImageName = "plus.png"
         BUT_NewTeam.ButText = "Añadir plantilla"
 
+        AddHandler Me.Info_Grid.DG.MouseDoubleClick, AddressOf EditTeam
 
-        LoadPlayersClub()
+        LoadTeams()
 
     End Sub
 
-    Public Sub LoadPlayersClub()
+    Public Sub LoadTeams()
 
 
         Dim dt As New DataTable()
@@ -36,34 +38,45 @@ Class TeamsWindow
         dt = Club.GetAllTeams(0, "", "")
 
         Dim xquery = From a In dt.AsEnumerable
-                     Select New With {.ID = a.Item("ID"), .NAME = a.Item("NAME"), .LASTNAME1 = a.Item("LASTNAME1"), .LASTNAME2 = a.Item("LASTNAME2"), .MAIL = a.Item("MAIL"), .PHONE = a.Item("PHONE"), .ADDRESS = a.Item("ADDRESS")
+                     Select New With {.ID = a.Item("ID"), .NAME = a.Item("NAME"), .CATEGORY = a.Item("CATEGORY"), .DIVISION = a.Item("DIVISION"), .LETTER = a.Item("LETTER")
         }
 
         Info_Grid.DG.ItemsSource = xquery
         Info_Grid.DG.Columns.Clear()
         Info_Grid.AddColumn("ID", "ID", 50, True, System.Windows.HorizontalAlignment.Left, "INTEGER")
-        Info_Grid.AddColumn("NAME", "NAME", 100, True, System.Windows.HorizontalAlignment.Left, "TEXT")
+        Info_Grid.AddColumn("Nombre", "NAME", 200, True, System.Windows.HorizontalAlignment.Left, "TEXT")
+        Info_Grid.AddColumn("Categoría", "CATEGORY", 200, True, System.Windows.HorizontalAlignment.Left, "TEXT")
+        Info_Grid.AddColumn("División", "DIVISION", 200, True, System.Windows.HorizontalAlignment.Left, "TEXT")
+        Info_Grid.AddColumn("Letra", "LETTER", 100, True, System.Windows.HorizontalAlignment.Left, "TEXT")
         Info_Grid.GridCounter()
 
     End Sub
 
-    Public Sub EditMyClub()
+    Private Sub CreateTeam(sender As Object, e As RoutedEventArgs)
+        Dim w As New EditTeam
 
-        Dim w = FrameWindow.Instance
-        w.CleanWindow()
-        Dim w1 As New EditClub
-        w.Content.Children.Add(w1)
+        w.ShowDialog()
+        e.Handled = True
 
-        w1.Load()
+        LoadTeams()
     End Sub
 
-    Public Sub CreateTeam()
+    Private Sub EditTeam(sender As Object, e As RoutedEventArgs)
 
-    End Sub
+        Dim dg = Me.Info_Grid.DG
 
-    Public Sub RegisterAccount()
+        If dg.SelectedItems.Count > 0 Then
+            Dim drv = Me.Info_Grid.DG.SelectedItem
+            Dim team As New Team()
+            team.LoadTeam(drv.ID)
+            Dim w As New EditTeam(team)
 
+            w.ShowDialog()
+            e.Handled = True
 
+        End If
+
+        LoadTeams()
     End Sub
 
 End Class
