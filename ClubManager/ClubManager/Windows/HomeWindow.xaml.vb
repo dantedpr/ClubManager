@@ -68,6 +68,7 @@ Class HomeWindow
         BUT_Club.LBL_Text.Margin = New Thickness(15, 1, 0, 0)
 
         AddHandler BUT_Club.Click, AddressOf EditMyClub
+        AddHandler BUT_Player.Click, AddressOf Players
 
         Dim dt As New DataTable()
 
@@ -93,6 +94,17 @@ Class HomeWindow
         w.Content.Children.Add(w1)
 
         w1.Load()
+    End Sub
+
+    Public Sub Players()
+
+        Dim w = FrameWindow.Instance
+        w.CleanWindow()
+        Dim w1 As New PlayersWindow
+        w.Content.Children.Add(w1)
+
+        w1.Load()
+
     End Sub
 
     Public Sub RegisterAccount()

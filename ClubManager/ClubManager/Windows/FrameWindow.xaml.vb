@@ -36,6 +36,13 @@ Public Class FrameWindow
         Timer1.Start()
         Load()
 
+        'BUT_Home.GetBackground = Nothing
+        'BUT_Home.ImageName = "home2.png"
+        'BUT_Home.ButText = ""
+        'BUT_Home.ButtonImage.Width = 60
+        'BUT_Home.ButtonImage.Height = 60
+        'BUT_Home.Border = 0
+        'BUT_Home.st1.HorizontalAlignment = HorizontalAlignment.Left
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
 
     End Sub
@@ -43,6 +50,7 @@ Public Class FrameWindow
 
         AddHandler btnClose.Click, AddressOf CloseApp
         LabelClub.Content = Club.Name
+
         'Dim imageBytes As Byte() = ImageManager.Base64StringToByteArray(Club.logoClub)
 
         '' Convertir el byte array a un BitmapImage
@@ -66,6 +74,15 @@ Public Class FrameWindow
         End If
 
     End Sub
+
+    Public Overloads Sub GoHome()
+        Dim w = FrameWindow.Instance
+        w.CleanWindow()
+        Dim w1 As New HomeWindow
+        w.Content.Children.Add(w1)
+        w1.Load()
+    End Sub
+
     Public Overloads Sub Minimize()
         ' Minimize the window
         Me.WindowState = WindowState.Minimized

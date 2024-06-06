@@ -115,6 +115,113 @@ Public Class Club
 
     End Sub
 
+    Public Shared Sub Delete()
+
+        Try
+
+            DeleteTeams()
+            DeletePlayers()
+            DeleteMaterial()
+            DeleteClubPass()
+
+            Dim query As String = "DELETE [CLUB] WHERE CODE = '" & Club.Code & "'"
+
+            Dim db As New DatabaseManager
+
+            Using connection As New SqlConnection(db.connectionString)
+                connection.Open()
+
+                Using command As New SqlCommand(query, connection)
+                    command.ExecuteScalar()
+                End Using
+            End Using
+
+        Catch ex As Exception
+            Console.WriteLine("Error al eliminar el club: " & ex.Message)
+        End Try
+
+    End Sub
+
+    Private Shared Sub DeleteTeams()
+        Try
+
+            Dim query As String = "DELETE [Teams] WHERE CLUB_ID = " & Club.ID & ""
+
+            Dim db As New DatabaseManager
+
+            Using connection As New SqlConnection(db.connectionString)
+                connection.Open()
+
+                Using command As New SqlCommand(query, connection)
+                    command.ExecuteScalar()
+                End Using
+            End Using
+
+        Catch ex As Exception
+            Console.WriteLine("Error al eliminar el club: " & ex.Message)
+        End Try
+    End Sub
+
+    Private Shared Sub DeletePlayers()
+        Try
+
+            Dim query As String = "DELETE [Players] WHERE CLUB_ID = " & Club.ID & ""
+
+            Dim db As New DatabaseManager
+
+            Using connection As New SqlConnection(db.connectionString)
+                connection.Open()
+
+                Using command As New SqlCommand(query, connection)
+                    command.ExecuteScalar()
+                End Using
+            End Using
+
+        Catch ex As Exception
+            Console.WriteLine("Error al eliminar el club: " & ex.Message)
+        End Try
+    End Sub
+
+    Private Shared Sub DeleteMaterial()
+        Try
+
+            Dim query As String = "DELETE [Material] WHERE CLUB_ID = " & Club.ID & ""
+
+            Dim db As New DatabaseManager
+
+            Using connection As New SqlConnection(db.connectionString)
+                connection.Open()
+
+                Using command As New SqlCommand(query, connection)
+                    command.ExecuteScalar()
+                End Using
+            End Using
+
+        Catch ex As Exception
+            Console.WriteLine("Error al eliminar el club: " & ex.Message)
+        End Try
+    End Sub
+
+    Private Shared Sub DeleteClubPass()
+        Try
+
+            Dim query As String = "DELETE [ClubPass] WHERE CLUB_CODE = '" & Club.Code & "'"
+
+            Dim db As New DatabaseManager
+
+            Using connection As New SqlConnection(db.connectionString)
+                connection.Open()
+
+                Using command As New SqlCommand(query, connection)
+                    command.ExecuteScalar()
+                End Using
+            End Using
+
+        Catch ex As Exception
+            Console.WriteLine("Error al eliminar el club: " & ex.Message)
+        End Try
+    End Sub
+
     Public Shared Sub UpdateClub(name As String, address As String, mail As String, phone As String)
 
         Try
@@ -196,6 +303,35 @@ Public Class Club
 
                         dataTable.Rows.Add(CInt(dr("ID")), dr("NAME").ToString())
                     End While
+                    dr.Close()
+                End Using
+
+                connection.Close()
+            End Using
+
+            Return dataTable
+        Catch ex As Exception
+            MessageBox.Show("Error executing query: " & ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    Public Shared Function GetAllPlayers(age As Integer, name As String, team As String) As DataTable
+        Try
+
+            Dim query = "SELECT * FROM Players WHERE CLUB_ID = " & Club.ID
+            Dim exists = False
+            Dim db As New DatabaseManager
+            Dim dataTable As New DataTable()
+
+            Using connection As New SqlConnection(db.connectionString)
+                ' Open connection
+                connection.Open()
+
+                Using command As New SqlCommand(query, connection)
+
+                    Dim dr As SqlDataReader = command.ExecuteReader()
+                    dataTable.Load(dr)
                     dr.Close()
                 End Using
 
