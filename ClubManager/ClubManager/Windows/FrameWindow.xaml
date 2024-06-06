@@ -2,7 +2,7 @@
          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:controls="clr-namespace:ClubManager.Controls"
         mc:Ignorable="d"
         Title="ClubManager" Height="626" Width="900" Name="FrameWindow"
         WindowStyle="None"
@@ -51,7 +51,9 @@
                             />
                         </StackPanel>
 
-                        <Image x:Name="logoClub" Source="/Images/Logo2.png" Stretch="Uniform" Margin="0,0,20,0" Grid.Column="0" HorizontalAlignment="Right" Width="60" Height="60"/>
+                        <Button x:Name="logoClubButton" Grid.Column="0" HorizontalAlignment="Right" Width="50" Height="50" Margin="0,0,20,0" Click="GoHome" Background="Transparent" BorderBrush="Transparent" BorderThickness="0">
+                            <Image Source="/Images/home2.png" Stretch="Uniform"/>
+                        </Button>
                         <Button x:Name="btnMinimize" VerticalAlignment="Top" Margin="0,10,0,0" BorderThickness="0" Content="−" Foreground="White" FontSize="16" FontFamily="Arial" Cursor="Hand" Grid.Column="1" Click="Minimize">
                             <Button.Style>
                                 <Style TargetType="Button">

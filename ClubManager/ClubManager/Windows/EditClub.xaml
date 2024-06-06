@@ -12,7 +12,7 @@
             <RowDefinition Height="600"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0" Name="MainGrid" Background="White" HorizontalAlignment="Center" Width="896">
-            <StackPanel Name="Club1" Orientation="Vertical" Height="280" Width="300" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,20,0,0">
+            <StackPanel Name="Club1" Orientation="Vertical" Height="236" Width="300" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,20,0,0">
 
                 <StackPanel Orientation="Horizontal" Height="32" Width="290" HorizontalAlignment="Left" VerticalAlignment="Center">
                     <Image Name="ID_Club" Source="/Images/id.png" Width="20" Margin="10,0,0,0" Height="20" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center"/>
