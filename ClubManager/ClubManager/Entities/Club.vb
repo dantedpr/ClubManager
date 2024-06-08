@@ -317,11 +317,34 @@ Public Class Club
         End Try
     End Function
 
-    Public Shared Function GetAllPlayers(age As Integer, name As String, team As String) As DataTable
+    Public Shared Function GetAllPlayers(age As String, name As String, team As String, category As String, Optional status As Boolean = True) As DataTable
         Try
 
-            Dim query = "SELECT * FROM Players WHERE CLUB_ID = " & Club.ID
-            Dim exists = False
+            Dim query = "SELECT p.ID, p.[NAME] ,p.[LASTNAME1] + ' ' + p.[LASTNAME2] AS FULLNAME ,p.[MAIL] ,p.[PHONE] ,p.[ADDRESS] ,p.[AGE] ,p.[BIRTHDATE] ,p.[CLUB_ID] ,p.[TEAM_ID]
+                        ,CASE  WHEN p.[STATUS] = 1 THEN 'ACTIVO' WHEN p.[STATUS] = 0 THEN 'INACTIVO' ELSE 'UNKNOWN' END AS STATUS
+                        ,t.Name AS TEAMNAME, t.Category AS TEAMCATEGORY FROM Players p LEFT JOIN Teams t ON t.ID = p.TEAM_ID WHERE p.CLUB_ID = " & Club.ID
+
+            If age <> "" AndAlso IsNumeric(age) Then
+                query = query & " AND p.Age = " & CInt(age)
+            End If
+
+            If name <> "" Then
+                query = query & " AND p.Name LIKE '" & name & "%'"
+            End If
+
+            If team <> "" Then
+                query = query & " AND t.Name = '" & team & "'"
+            End If
+
+            If category <> "" Then
+                query = query & " AND t.Category = '" & category & "'"
+            End If
+
+            If status Then
+                query = query & " AND p.Status = " & 1
+            End If
+            query = query & " ORDER BY p.ID DESC"
+
             Dim db As New DatabaseManager
             Dim dataTable As New DataTable()
 
@@ -378,6 +401,73 @@ Public Class Club
             End Using
 
             Return dataTable
+        Catch ex As Exception
+            MessageBox.Show("Error executing query: " & ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    Public Shared Function GetTeamsName() As List(Of String)
+        Try
+
+            Dim query = "SELECT * FROM Teams WHERE CLUB_ID = " & Club.ID
+
+
+            Dim db As New DatabaseManager
+            Dim li As New List(Of String)
+
+            Using connection As New SqlConnection(db.connectionString)
+                ' Open connection
+                connection.Open()
+
+                Using command As New SqlCommand(query, connection)
+
+                    Dim dr As SqlDataReader = command.ExecuteReader()
+
+                    While dr.Read()
+                        li.Add(dr("NAME").ToString())
+                    End While
+                    dr.Close()
+                End Using
+
+                connection.Close()
+            End Using
+
+            Return li
+        Catch ex As Exception
+            MessageBox.Show("Error executing query: " & ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    Public Shared Function GetTeamID(name As String) As Integer
+        Try
+
+            Dim query = "SELECT ID FROM Teams WHERE CLUB_ID = " & Club.ID & " AND NAME = '" & name & "'"
+
+
+            Dim db As New DatabaseManager
+            Dim teamID As Integer = -1
+
+            Using connection As New SqlConnection(db.connectionString)
+                ' Open connection
+                connection.Open()
+
+                Using command As New SqlCommand(query, connection)
+
+                    Dim dr As SqlDataReader = command.ExecuteReader()
+
+                    If dr.Read() Then
+                        teamID = CInt(dr("ID"))
+                    End If
+
+                    dr.Close()
+                End Using
+
+                connection.Close()
+            End Using
+
+            Return teamID
         Catch ex As Exception
             MessageBox.Show("Error executing query: " & ex.Message)
             Return Nothing

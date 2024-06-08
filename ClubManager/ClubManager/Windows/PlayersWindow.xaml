@@ -14,12 +14,29 @@
         <Grid Grid.Row="0" Name="MainGrid" Background="White" HorizontalAlignment="Center" Width="896">
             <StackPanel Name="MenuBar" Orientation="Vertical"  HorizontalAlignment="Center" Width="876">
                 <StackPanel Name="Menu1" Orientation="Horizontal" Height="180"  HorizontalAlignment="Left" Margin="10,0,0,0">
-                    <controls:CMButton x:Name="BUT_NewPlayer"  Width="139" Height="30" Margin="10,20,0,0" Border = "2" VerticalAlignment="Top"/>
+                    <controls:CMButton x:Name="BUT_NewPlayer"  Width="139" Height="38" Margin="10,20,0,0" Border = "2" VerticalAlignment="Top"/>
                 </StackPanel>
                 <StackPanel Name="Menu2" Orientation="Vertical" Height="600"  HorizontalAlignment="Center">
                     <controls:CMGrid x:Name="Info_Grid" Height="408" Width="863" ></controls:CMGrid>
                 </StackPanel>
             </StackPanel>
+
+            <Label Name="LBL_ClubAddress" Width="141" Height="30" Content="Plantilla:" FontWeight="SemiBold" Margin="34,140,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" />
+            <ComboBox  x:Name="playerTeam" Width="190" Height="30" Margin="129,139,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" />
+
+            <Label Name="LBL_Category" Width="141" Height="30" Content="Categoría:" FontWeight="SemiBold" Margin="342,140,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" />
+            <ComboBox  x:Name="playerCategory" Width="208" Height="30" Margin="426,139,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" />
+
+            <Label Name="LBL_Age" Width="141" Height="30" Content="Edad:" FontWeight="SemiBold" Margin="342,87,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" />
+            <controls:CMText  x:Name="playerAge" Width="75" Margin="426,87,0,0" AllowNegatives="False" OnlyNumeric="True" AllowDecimals="False" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" />
+
+            <Label Name="LBL_Name" Width="142" Height="30" Content="Nombre:" FontWeight="SemiBold" Margin="34,87,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" />
+            <controls:CMText  x:Name="playerName" Width="190" Margin="129,87,0,0" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" />
+            <CheckBox  x:Name="playerStatus" Content="Mostrar inactivos" FontWeight="SemiBold" Width="190" Margin="521,90,0,0" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" />
+
+            <controls:CMButton x:Name="BUT_Search"  Width="139" Height="38" Margin="733,131,24,0" Border = "2" VerticalAlignment="Top" />
+
+            <controls:CMButton x:Name="BUT_Delete"  Width="139" Height="38" Margin="208,19,549,0" Border = "2" VerticalAlignment="Top" />
         </Grid>
 
     </Grid>
