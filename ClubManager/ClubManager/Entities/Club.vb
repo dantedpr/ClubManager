@@ -417,4 +417,38 @@ Public Class Club
         End Try
     End Function
 
+    Public Shared Function GetTeamID(name As String) As Integer
+        Try
+
+            Dim query = "SELECT ID FROM Teams WHERE CLUB_ID = " & Club.ID & " AND NAME = '" & name & "'"
+
+
+            Dim db As New DatabaseManager
+            Dim teamID As Integer = -1
+
+            Using connection As New SqlConnection(db.connectionString)
+                ' Open connection
+                connection.Open()
+
+                Using command As New SqlCommand(query, connection)
+
+                    Dim dr As SqlDataReader = command.ExecuteReader()
+
+                    If dr.Read() Then
+                        teamID = CInt(dr("ID"))
+                    End If
+
+                    dr.Close()
+                End Using
+
+                connection.Close()
+            End Using
+
+            Return teamID
+        Catch ex As Exception
+            MessageBox.Show("Error executing query: " & ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
 End Class

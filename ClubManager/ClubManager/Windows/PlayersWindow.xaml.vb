@@ -36,7 +36,7 @@ Class PlayersWindow
         BUT_Search.ImageName = "transparency.png"
         BUT_Search.ButText = "Buscar"
 
-        'AddHandler Me.Info_Grid.DG.MouseDoubleClick, AddressOf EditPlayer
+        AddHandler Me.Info_Grid.DG.MouseDoubleClick, AddressOf EditPlayer
 
 
         playerCategory.Items.Clear()
@@ -87,9 +87,10 @@ Class PlayersWindow
     End Sub
 
     Private Sub CreatePlayer(sender As Object, e As RoutedEventArgs)
-        Dim w As New EditTeam
-
+        Dim w As New EditPlayer
+        w.Load()
         w.ShowDialog()
+
         e.Handled = True
 
         LoadPlayersClub()
@@ -106,15 +107,15 @@ Class PlayersWindow
         End If
     End Sub
 
-    Private Sub EditTeam(sender As Object, e As RoutedEventArgs)
+    Private Sub EditPlayer(sender As Object, e As RoutedEventArgs)
 
         Dim dg = Me.Info_Grid.DG
 
         If dg.SelectedItems.Count > 0 Then
             Dim drv = Me.Info_Grid.DG.SelectedItem
-            Dim team As New Team()
-            team.LoadTeam(drv.ID)
-            Dim w As New EditTeam(team)
+            Dim myplayer As New Player()
+            myplayer.LoadPlayer(drv.ID)
+            Dim w As New EditPlayer(myplayer)
 
             w.ShowDialog()
             e.Handled = True
