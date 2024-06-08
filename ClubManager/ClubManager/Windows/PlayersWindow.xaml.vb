@@ -10,7 +10,6 @@ Class PlayersWindow
 
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
-        Load()
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
 
     End Sub
@@ -63,6 +62,8 @@ Class PlayersWindow
             playerTeam.Items.Add(x)
         Next
         playerTeam.SelectedIndex = 0
+
+        AddHandler playerTeam.SelectionChanged, AddressOf Search
         LoadPlayersClub()
 
     End Sub
@@ -72,16 +73,27 @@ Class PlayersWindow
 
         Dim dt As New DataTable()
 
-        dt = Club.GetAllPlayers(0, "", "")
+        dt = Club.GetAllPlayers(playerAge.Text, playerName.Text, playerTeam.SelectedItem.ToString(), playerCategory.SelectedItem.ToString(),
+                                playerStatus.IsChecked)
 
         Dim xquery = From a In dt.AsEnumerable
-                     Select New With {.ID = a.Item("ID"), .NAME = a.Item("NAME"), .LASTNAME1 = a.Item("LASTNAME1"), .LASTNAME2 = a.Item("LASTNAME2"), .MAIL = a.Item("MAIL"), .PHONE = a.Item("PHONE"), .ADDRESS = a.Item("ADDRESS")
+                     Select New With {.ID = a.Item("ID"), .NAME = a.Item("NAME"), .FULLNAME = a.Item("FULLNAME"), .AGE = a.Item("AGE"), .MAIL = a.Item("MAIL"), .PHONE = a.Item("PHONE"),
+                                        .ADDRESS = a.Item("ADDRESS"), .TEAMNAME = a.Item("TEAMNAME"), .TEAMCATEGORY = a.Item("TEAMCATEGORY"), .STATUS = a.Item("STATUS")
         }
+
 
         Info_Grid.DG.ItemsSource = xquery
         Info_Grid.DG.Columns.Clear()
         Info_Grid.AddColumn("ID", "ID", 50, True, System.Windows.HorizontalAlignment.Left, "INTEGER")
-        Info_Grid.AddColumn("NAME", "NAME", 100, True, System.Windows.HorizontalAlignment.Left, "TEXT")
+        Info_Grid.AddColumn("Nombre", "NAME", 100, True, System.Windows.HorizontalAlignment.Left, "TEXT")
+        Info_Grid.AddColumn("Apellidos", "FULLNAME", 100, True, System.Windows.HorizontalAlignment.Left, "TEXT")
+        Info_Grid.AddColumn("Edad", "AGE", 50, True, System.Windows.HorizontalAlignment.Left, "INTEGER")
+        Info_Grid.AddColumn("Mail", "MAIL", 150, True, System.Windows.HorizontalAlignment.Left, "TEXT")
+        Info_Grid.AddColumn("Teléfono", "PHONE", 100, True, System.Windows.HorizontalAlignment.Left, "TEXT")
+        Info_Grid.AddColumn("Dirección", "ADDRESS", 100, True, System.Windows.HorizontalAlignment.Left, "TEXT")
+        Info_Grid.AddColumn("Equipo", "TEAMNAME", 100, True, System.Windows.HorizontalAlignment.Left, "TEXT")
+        Info_Grid.AddColumn("Categoría", "TEAMCATEGORY", 100, True, System.Windows.HorizontalAlignment.Left, "TEXT")
+        Info_Grid.AddColumn("Estado", "STATUS", 100, True, System.Windows.HorizontalAlignment.Left, "TEXT")
         Info_Grid.GridCounter()
 
     End Sub
