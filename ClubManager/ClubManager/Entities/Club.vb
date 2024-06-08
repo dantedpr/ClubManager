@@ -384,4 +384,37 @@ Public Class Club
         End Try
     End Function
 
+    Public Shared Function GetTeamsName() As List(Of String)
+        Try
+
+            Dim query = "SELECT * FROM Teams WHERE CLUB_ID = " & Club.ID
+
+
+            Dim db As New DatabaseManager
+            Dim li As New List(Of String)
+
+            Using connection As New SqlConnection(db.connectionString)
+                ' Open connection
+                connection.Open()
+
+                Using command As New SqlCommand(query, connection)
+
+                    Dim dr As SqlDataReader = command.ExecuteReader()
+
+                    While dr.Read()
+                        li.Add(dr("NAME").ToString())
+                    End While
+                    dr.Close()
+                End Using
+
+                connection.Close()
+            End Using
+
+            Return li
+        Catch ex As Exception
+            MessageBox.Show("Error executing query: " & ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
 End Class
