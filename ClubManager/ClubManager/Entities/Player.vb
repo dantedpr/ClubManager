@@ -146,14 +146,41 @@ Public Class Player
         End Try
 
     End Sub
+    Public Sub UpdateStatus()
 
-    Public Sub DeleteTeam()
+        Try
+            Dim query As String = "UPDATE Players SET [STATUS] = @p1 WHERE ID = " & ID & ""
+
+            Dim db As New DatabaseManager
+
+            Using connection As New SqlConnection(db.connectionString)
+                connection.Open()
+
+                Using command As New SqlCommand(query, connection)
+                    If Status Then
+                        command.Parameters.AddWithValue("@p1", 0)
+                        Status = 0
+                    Else
+                        command.Parameters.AddWithValue("@p1", 1)
+                        Status = 1
+                    End If
+                    command.ExecuteScalar()
+                End Using
+            End Using
+
+        Catch ex As Exception
+            Console.WriteLine("Error al actualizar el jugador: " & ex.Message)
+        End Try
+
+    End Sub
+
+    Public Sub DeletePlayer()
 
         Try
 
             UpdatePlayers()
 
-            Dim query As String = "DELETE [Teams] WHERE ID = " & ID & ""
+            Dim query As String = "DELETE [Players] WHERE ID = " & ID & ""
 
             Dim db As New DatabaseManager
 
@@ -166,7 +193,7 @@ Public Class Player
             End Using
 
         Catch ex As Exception
-            Console.WriteLine("Error al eliminar la plantilla: " & ex.Message)
+            Console.WriteLine("Error al eliminar el jugador: " & ex.Message)
         End Try
 
     End Sub

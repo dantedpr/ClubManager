@@ -19,7 +19,7 @@ Class PlayersWindow
         AddHandler BUT_NewPlayer.Click, AddressOf CreatePlayer
         BUT_NewPlayer.Background = New SolidColorBrush(Colors.White)
         'BUT_Aceptar.GetBackground = New SolidColorBrush(System.Windows.Media.Color.FromRgb(210, 213, 214))
-        BUT_NewPlayer.GetBackground = New SolidColorBrush(Colors.White)
+        BUT_NewPlayer.GetBackground = New SolidColorBrush(Colors.WhiteSmoke)
         BUT_NewPlayer.ImageName = "plus.png"
         BUT_NewPlayer.ButText = "Añadir jugador"
 
@@ -27,7 +27,13 @@ Class PlayersWindow
         BUT_Delete.Background = New SolidColorBrush(Colors.White)
         BUT_Delete.GetBackground = New SolidColorBrush(Colors.WhiteSmoke)
         BUT_Delete.ImageName = "delete.png"
-        BUT_Delete.ButText = "Eliminar plantilla"
+        BUT_Delete.ButText = "Eliminar jugador"
+
+        AddHandler BUT_Deactivate.Click, AddressOf DeactivatePlayer
+        BUT_Deactivate.Background = New SolidColorBrush(Colors.White)
+        BUT_Deactivate.GetBackground = New SolidColorBrush(Colors.WhiteSmoke)
+        BUT_Deactivate.ImageName = "switch.png"
+        BUT_Deactivate.ButText = "Activar/desactivar jugador"
 
         AddHandler BUT_Search.Click, AddressOf Search
         BUT_Search.Background = New SolidColorBrush(Colors.White)
@@ -143,9 +149,9 @@ Class PlayersWindow
         If dg.SelectedItems.Count > 0 Then
             If MessageBox.Show("¿Está seguro que desea eliminar el jugador seleccionado?", "Eliminar jugador", CType(MessageBoxButton.YesNo, MessageBoxButtons), CType(MessageBoxImage.Information, MessageBoxIcon)) = MessageBoxResult.Yes Then
                 Dim drv = Me.Info_Grid.DG.SelectedItem
-                'Dim team As New Team()
-                'team.LoadTeam(drv.ID)
-                'team.DeleteTeam()
+                Dim player As New Player()
+                player.LoadPlayer(drv.ID)
+                player.DeletePlayer()
                 e.Handled = True
 
                 LoadPlayersClub()
@@ -158,6 +164,32 @@ Class PlayersWindow
             e.Handled = True
         Else
             MessageBox.Show("Debe seleccionar primero un jugador de la tabla.", "Eliminar jugador", CType(MessageBoxButton.OK, MessageBoxButtons), CType(MessageBoxImage.Information, MessageBoxIcon))
+        End If
+
+        e.Handled = True
+    End Sub
+
+    Private Sub DeactivatePlayer(sender As Object, e As RoutedEventArgs)
+        Dim dg = Me.Info_Grid.DG
+
+        If dg.SelectedItems.Count > 0 Then
+            If MessageBox.Show("¿Está seguro que desea cambiar el estado del jugador seleccionado?", "Activar/desactivar jugador", CType(MessageBoxButton.YesNo, MessageBoxButtons), CType(MessageBoxImage.Information, MessageBoxIcon)) = MessageBoxResult.Yes Then
+                Dim drv = Me.Info_Grid.DG.SelectedItem
+                Dim player As New Player()
+                player.LoadPlayer(drv.ID)
+                player.UpdateStatus()
+                e.Handled = True
+
+                LoadPlayersClub()
+            Else
+
+                e.Handled = True
+                Exit Sub
+            End If
+
+            e.Handled = True
+        Else
+            MessageBox.Show("Debe seleccionar primero un jugador de la tabla.", "Activar/desactivar jugador", CType(MessageBoxButton.OK, MessageBoxButtons), CType(MessageBoxImage.Information, MessageBoxIcon))
         End If
 
         e.Handled = True

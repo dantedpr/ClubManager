@@ -384,6 +384,9 @@
   <ItemGroup>
     <Resource Include="Images\birthday-cake.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\switch.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
