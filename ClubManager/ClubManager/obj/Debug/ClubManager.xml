@@ -124,6 +124,16 @@ EditClub
 InitializeComponent
 </summary>
 </member>
+<member name="T:ClubManager.MaterialsWindow">
+<summary>
+MaterialsWindow
+</summary>
+</member>
+<member name="M:ClubManager.MaterialsWindow.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
 <member name="T:ClubManager.TeamsWindow">
 <summary>
 TeamsWindow
