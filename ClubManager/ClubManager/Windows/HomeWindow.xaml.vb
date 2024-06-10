@@ -70,6 +70,7 @@ Class HomeWindow
         AddHandler BUT_Club.Click, AddressOf EditMyClub
         AddHandler BUT_Player.Click, AddressOf Players
         AddHandler BUT_Team.Click, AddressOf Teams
+        AddHandler BUT_Material.Click, AddressOf Materials
 
         Dim dt As New DataTable()
 
@@ -108,6 +109,17 @@ Class HomeWindow
 
     End Sub
     Public Sub Teams()
+
+        Dim w = FrameWindow.Instance
+        w.CleanWindow()
+        Dim w1 As New TeamsWindow
+        w.Content.Children.Add(w1)
+
+        w1.Load()
+
+    End Sub
+
+    Public Sub Materials()
 
         Dim w = FrameWindow.Instance
         w.CleanWindow()

@@ -1,0 +1,40 @@
+﻿<UserControl x:Class="MaterialsWindow"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="clr-namespace:ClubManager.Controls"
+        mc:Ignorable="d"
+        d:DesignHeight="600" d:DesignWidth="880"
+        >
+    <Grid Height="600" Width="880">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="600"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Name="MainGrid" Background="White" HorizontalAlignment="Center" Width="896">
+            <StackPanel Name="MenuBar" Orientation="Vertical"  HorizontalAlignment="Center" Width="876">
+                <StackPanel Name="Menu1" Orientation="Horizontal" Height="180"  HorizontalAlignment="Left" Margin="10,0,0,0">
+                    <controls:CMButton x:Name="BUT_NewTeam"  Width="139" Height="38" Margin="10,20,0,0" Border = "2" VerticalAlignment="Top" />
+
+                </StackPanel>
+                <StackPanel Name="Menu2" Orientation="Vertical" Height="600"  HorizontalAlignment="Center">
+                    <controls:CMGrid x:Name="Info_Grid" Height="408" Width="863" ></controls:CMGrid>
+                </StackPanel>
+            </StackPanel>
+
+            <Label Name="LBL_ClubAddress" Width="141" Height="30" Content="Tipo:" FontWeight="SemiBold" Margin="34,140,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" />
+            <ComboBox  x:Name="matType" Width="190" Height="30" Margin="182,139,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" />
+
+            <Label Name="LBL_Name" Width="142" Height="30" Content="Buscar por nombre:" FontWeight="SemiBold" Margin="34,87,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" />
+            <controls:CMText  x:Name="matName" Width="190" Margin="182,87,0,0" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" />
+
+            <controls:CMButton x:Name="BUT_Search"  Width="139" Height="38" Margin="733,131,24,0" Border = "2" VerticalAlignment="Top" />
+
+            <controls:CMButton x:Name="BUT_Delete"  Width="139" Height="38" Margin="208,19,549,0" Border = "2" VerticalAlignment="Top" />
+        </Grid>
+
+    </Grid>
+</UserControl>
+
+    
+    
