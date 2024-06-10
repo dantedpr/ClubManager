@@ -317,7 +317,7 @@ Public Class Club
         End Try
     End Function
 
-    Public Shared Function GetAllPlayers(age As String, name As String, team As String, category As String, Optional status As Boolean = True) As DataTable
+    Public Shared Function GetAllPlayers(age As String, name As String, team As String, category As String, Optional status As Boolean = False) As DataTable
         Try
 
             Dim query = "SELECT p.ID, p.[NAME] ,p.[LASTNAME1] + ' ' + p.[LASTNAME2] AS FULLNAME ,p.[MAIL] ,p.[PHONE] ,p.[ADDRESS] ,p.[AGE] ,p.[BIRTHDATE] ,p.[CLUB_ID] ,p.[TEAM_ID]
@@ -340,7 +340,7 @@ Public Class Club
                 query = query & " AND t.Category = '" & category & "'"
             End If
 
-            If status Then
+            If Not status Then
                 query = query & " AND p.Status = " & 1
             End If
             query = query & " ORDER BY p.ID DESC"

@@ -37,6 +37,8 @@
             <controls:CMButton x:Name="BUT_Search"  Width="139" Height="38" Margin="733,131,24,0" Border = "2" VerticalAlignment="Top" />
 
             <controls:CMButton x:Name="BUT_Delete"  Width="139" Height="38" Margin="208,19,549,0" Border = "2" VerticalAlignment="Top" />
+
+            <controls:CMButton x:Name="BUT_Deactivate" Height="38" Margin="391,19,295,0" Border = "2" VerticalAlignment="Top" />
         </Grid>
 
     </Grid>
