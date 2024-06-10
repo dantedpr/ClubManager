@@ -47,6 +47,8 @@ Public Class EditTeam
         BUT_Cancel.ImageName = "cancel.png"
         BUT_Cancel.ButText = "Cancelar"
 
+
+        AddHandler Me.Info_Grid.DG.MouseDoubleClick, AddressOf EditPlayer
         teamCategory.Items.Clear()
         teamCategory.Items.Add("")
         teamCategory.Items.Add("Promesas")
@@ -68,6 +70,8 @@ Public Class EditTeam
                 End If
             Next
         End If
+
+        LoadPlayersClub()
 
     End Sub
 
@@ -101,6 +105,52 @@ Public Class EditTeam
         End If
     End Sub
 
+    Private Sub EditPlayer(sender As Object, e As RoutedEventArgs)
+
+        Dim dg = Me.Info_Grid.DG
+
+        If dg.SelectedItems.Count > 0 Then
+            Dim drv = Me.Info_Grid.DG.SelectedItem
+            Dim myplayer As New Player()
+            myplayer.LoadPlayer(drv.ID)
+            Dim w As New EditPlayer(myplayer)
+
+            w.ShowDialog()
+            e.Handled = True
+
+        End If
+
+        LoadPlayersClub()
+    End Sub
+
+    Public Sub LoadPlayersClub()
+
+
+        Dim dt As New DataTable()
+
+        dt = Club.GetAllPlayers("", "", _team.Name, "", True)
+
+        Dim xquery = From a In dt.AsEnumerable
+                     Select New With {.ID = a.Item("ID"), .NAME = a.Item("NAME"), .FULLNAME = a.Item("FULLNAME"), .AGE = a.Item("AGE"), .MAIL = a.Item("MAIL"), .PHONE = a.Item("PHONE"),
+                                        .ADDRESS = a.Item("ADDRESS"), .TEAMNAME = a.Item("TEAMNAME"), .TEAMCATEGORY = a.Item("TEAMCATEGORY"), .STATUS = a.Item("STATUS")
+        }
+
+
+        Info_Grid.DG.ItemsSource = xquery
+        Info_Grid.DG.Columns.Clear()
+        Info_Grid.AddColumn("ID", "ID", 50, True, System.Windows.HorizontalAlignment.Left, "INTEGER")
+        Info_Grid.AddColumn("Nombre", "NAME", 100, True, System.Windows.HorizontalAlignment.Left, "TEXT")
+        Info_Grid.AddColumn("Apellidos", "FULLNAME", 100, True, System.Windows.HorizontalAlignment.Left, "TEXT")
+        Info_Grid.AddColumn("Edad", "AGE", 50, True, System.Windows.HorizontalAlignment.Left, "INTEGER")
+        Info_Grid.AddColumn("Mail", "MAIL", 150, True, System.Windows.HorizontalAlignment.Left, "TEXT")
+        Info_Grid.AddColumn("Teléfono", "PHONE", 100, True, System.Windows.HorizontalAlignment.Left, "TEXT")
+        Info_Grid.AddColumn("Dirección", "ADDRESS", 100, True, System.Windows.HorizontalAlignment.Left, "TEXT")
+        Info_Grid.AddColumn("Equipo", "TEAMNAME", 100, True, System.Windows.HorizontalAlignment.Left, "TEXT")
+        Info_Grid.AddColumn("Categoría", "TEAMCATEGORY", 100, True, System.Windows.HorizontalAlignment.Left, "TEXT")
+        Info_Grid.AddColumn("Estado", "STATUS", 100, True, System.Windows.HorizontalAlignment.Left, "TEXT")
+        Info_Grid.GridCounter()
+
+    End Sub
 
     Private Sub SaveTeam(sender As Object, e As RoutedEventArgs)
 

@@ -124,7 +124,7 @@
 
                 <Image Name="Email_Club" Source="/Images/trophy.png" Width="20" Height="20"  Margin="44,321,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left"/>
 
-                <controls:CMGrid x:Name="ClubGrid" Margin="282,90,34,105" Grid.Row="1"/>
+                <controls:CMGrid x:Name="Info_Grid" Margin="282,90,34,105" Grid.Row="1"/>
 
             </Grid>
         </Border>

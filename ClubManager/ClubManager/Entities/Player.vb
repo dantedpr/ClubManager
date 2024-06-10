@@ -147,13 +147,13 @@ Public Class Player
 
     End Sub
 
-    Public Sub DeleteTeam()
+    Public Sub DeletePlayer()
 
         Try
 
             UpdatePlayers()
 
-            Dim query As String = "DELETE [Teams] WHERE ID = " & ID & ""
+            Dim query As String = "DELETE [Players] WHERE ID = " & ID & ""
 
             Dim db As New DatabaseManager
 
@@ -166,7 +166,7 @@ Public Class Player
             End Using
 
         Catch ex As Exception
-            Console.WriteLine("Error al eliminar la plantilla: " & ex.Message)
+            Console.WriteLine("Error al eliminar el jugador: " & ex.Message)
         End Try
 
     End Sub

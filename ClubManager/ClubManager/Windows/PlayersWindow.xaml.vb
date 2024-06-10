@@ -27,7 +27,7 @@ Class PlayersWindow
         BUT_Delete.Background = New SolidColorBrush(Colors.White)
         BUT_Delete.GetBackground = New SolidColorBrush(Colors.WhiteSmoke)
         BUT_Delete.ImageName = "delete.png"
-        BUT_Delete.ButText = "Eliminar plantilla"
+        BUT_Delete.ButText = "Eliminar jugador"
 
         AddHandler BUT_Search.Click, AddressOf Search
         BUT_Search.Background = New SolidColorBrush(Colors.White)
@@ -143,9 +143,9 @@ Class PlayersWindow
         If dg.SelectedItems.Count > 0 Then
             If MessageBox.Show("¿Está seguro que desea eliminar el jugador seleccionado?", "Eliminar jugador", CType(MessageBoxButton.YesNo, MessageBoxButtons), CType(MessageBoxImage.Information, MessageBoxIcon)) = MessageBoxResult.Yes Then
                 Dim drv = Me.Info_Grid.DG.SelectedItem
-                'Dim team As New Team()
-                'team.LoadTeam(drv.ID)
-                'team.DeleteTeam()
+                Dim player As New Player()
+                player.LoadPlayer(drv.ID)
+                player.DeletePlayer()
                 e.Handled = True
 
                 LoadPlayersClub()
