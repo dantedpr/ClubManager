@@ -40,7 +40,7 @@
                         <ColumnDefinition Width="25"/>
                         <ColumnDefinition Width="5"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Text="Plantilla"
+                    <TextBlock Text="Jugador"
                                Foreground="White"
                                FontWeight="Bold"
                                FontSize="15"
@@ -120,10 +120,10 @@
                 <controls:CMText  x:Name="playerMail" Width="190" Margin="288,154,0,0" Grid.Row="1" HorizontalAlignment="Left" Height="30" VerticalAlignment="Top" />
 
                 <Label Name="LBL_BirthDate" Width="147" Height="30" Content="Fecha de Nacimiento:" FontWeight="SemiBold" Margin="310,220,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" />
-                <Calendar  x:Name="playerAge" Width="179" Height="168" Margin="288,250,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                <DatePicker  x:Name="playerAge" VerticalContentAlignment="Center" Width="190" Height="30" Margin="288,250,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" />
 
-                <Label Name="LBL_Team" Width="105" Height="30" Content="Categoría:" FontWeight="SemiBold" Margin="530,316,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" />
-                <ComboBox  x:Name="playerTeam" Width="190" Height="30" Margin="508,346,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                <Label Name="LBL_Team" Width="105" Height="30" Content="Equipo:" FontWeight="SemiBold" Margin="310,316,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                <ComboBox  x:Name="playerTeam" Width="190" Height="30" Margin="288,346,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left" />
 
                 <controls:CMButton x:Name="BUT_Cancel"  Width="100" Height="30" Margin="0,0,167,30" Border = "2" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom"></controls:CMButton>
                 <controls:CMButton x:Name="BUT_Aceptar"  Width="100" Height="30" Margin="0,0,34,30" Border = "2" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom"></controls:CMButton>
@@ -138,7 +138,7 @@
 
                 <Image Name="Address_Club" Source="/Images/A.png" Width="20" Height="20" Margin="44,225,0,0" Grid.Row="1" RenderTransformOrigin="0.415,3.87" VerticalAlignment="Top" HorizontalAlignment="Left"/>
 
-                <Image Name="Player_Team" Source="/Images/trophy.png" Width="20" Height="20" Margin="509,321,0,0" Grid.Row="1" RenderTransformOrigin="0.415,3.87" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                <Image Name="Player_Team" Source="/Images/trophy.png" Width="20" Height="20" Margin="289,321,0,0" Grid.Row="1" RenderTransformOrigin="0.415,3.87" VerticalAlignment="Top" HorizontalAlignment="Left"/>
 
                 <Image Name="Age" Source="/Images/A.png" Width="20" Height="20" Margin="44,225,0,0" Grid.Row="1" RenderTransformOrigin="0.415,3.87" VerticalAlignment="Top" HorizontalAlignment="Left"/>
 

@@ -59,7 +59,9 @@ Public Class EditPlayer
             playerTeam.Items.Add(x)
         Next
         playerTeam.SelectedIndex = 0
-
+        playerAge.SelectedDate = Today
+        playerAge.SelectedDateFormat = DatePickerFormat.Short
+        playerAge.FirstDayOfWeek = DayOfWeek.Monday
 
         If _player.ID <> -1 Then
             playerName.Text = _player.Name

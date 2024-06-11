@@ -122,9 +122,13 @@
     </Compile>
     <Compile Include="Entities\Club.vb" />
     <Compile Include="Entities\Player.vb" />
+    <Compile Include="Entities\Material.vb" />
     <Compile Include="Entities\Team.vb" />
     <Compile Include="Windows\EditPlayer.xaml.vb">
       <DependentUpon>EditPlayer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\EditMaterial.xaml.vb">
+      <DependentUpon>EditMaterial.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\EditTeam.xaml.vb">
       <DependentUpon>EditTeam.xaml</DependentUpon>
@@ -176,6 +180,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Windows\EditPlayer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\EditMaterial.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -393,6 +401,39 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\switch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\signature.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\boxes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Petos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Conos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Balones.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Porterias.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Escaleras.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Campo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Instalacion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Vestuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Otros.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
