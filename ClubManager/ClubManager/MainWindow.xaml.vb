@@ -49,7 +49,7 @@
     Public Sub Login()
 
         txtUser.Text = "PRATAE"
-        txtPass.Password = "DanteTest123"
+        txtPass.Password = "FIB"
 
         If txtUser.Text <> "" And txtPass.Password <> "" Then
 
