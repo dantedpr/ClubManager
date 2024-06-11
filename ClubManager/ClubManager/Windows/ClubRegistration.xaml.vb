@@ -116,9 +116,13 @@ Public Class ClubRegistration
                 pass = clubPassword.Password
             End If
         End If
-        If clubCode.Text = "" Or clubName.Text = "" Or clubAddress.Text = "" Or clubMail.Text = "" Or clubPhone.Text = "" Or clubPhone.Text.Length < 9 Or pass = "" Then
+        If clubCode.Text = "" Or clubName.Text = "" Or clubAddress.Text = "" Or clubMail.Text = "" Or clubPhone.Text = "" Or clubPhone.Text.Length < 9 Or pass = "" Or pass.Length < 6 Then
 
-            MessageBox.Show("¡Faltán datos por introducir! Por favor revisa los datos introducidos.", "Error", MessageBoxButton.OK, MessageBoxImage.Error)
+            If pass.Length < 6 Then
+                MessageBox.Show("La contraseña debe tener almenos 6 carácteres.", "Error", MessageBoxButton.OK, MessageBoxImage.Error)
+            Else
+                MessageBox.Show("¡Faltán datos por introducir! Por favor revisa los datos introducidos.", "Error", MessageBoxButton.OK, MessageBoxImage.Error)
+            End If
             Return
         Else
 
@@ -131,12 +135,9 @@ Public Class ClubRegistration
                 Return
             End If
 
-            Dim imageBytes As Byte() = ImageManager.ImageToByteArray(imagenClub)
-
-            ' Convertir el byte array a una cadena base64
-            Dim base64String As String = ImageManager.ByteArrayToBase64String(imageBytes)
-            ImageManager.SaveImageToDatabase("CLUB", idClub, imagenClub, idClub)
-            Club.logoClub = base64String
+            If imagenClub IsNot Nothing Then
+                ImageManager.SaveImageToDatabase("CLUB", idClub, imagenClub, idClub)
+            End If
 
             Dim db As New DatabaseManager
             If db.CheckUser(clubCode.Text, pass) Then
