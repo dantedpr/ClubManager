@@ -8,7 +8,6 @@ Public Class EditMaterial
     Public Property _material As Material
     Private isMaximized As Boolean = False
     Private previousWindowState As WindowState
-    Private imagenMat As BitmapImage
     Public Sub New()
 
         ' Esta llamada es exigida por el diseñador.
