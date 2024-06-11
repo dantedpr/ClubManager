@@ -1,6 +1,7 @@
 ﻿Imports System.Timers
 Imports System.Windows.Threading
-
+Imports System.Diagnostics
+Imports System.Security.Policy
 Public Class FrameWindow
 
     Inherits Window
@@ -51,6 +52,9 @@ Public Class FrameWindow
         AddHandler btnClose.Click, AddressOf CloseApp
         LabelClub.Content = Club.Name
 
+        AddHandler logoESP.Click, AddressOf ESPFederation
+        AddHandler logoFCF.Click, AddressOf CATFederation
+
         'Dim imageBytes As Byte() = ImageManager.Base64StringToByteArray(Club.logoClub)
 
         '' Convertir el byte array a un BitmapImage
@@ -60,6 +64,13 @@ Public Class FrameWindow
 
     Public Overloads Sub CloseApp()
         System.Windows.Application.Current.Shutdown()
+    End Sub
+
+    Public Overloads Sub ESPFederation()
+        Process.Start("https://resultados.rfef.es/pnfg/NPcd/NFG_CmpJornada?cod_primaria=1000120")
+    End Sub
+    Public Overloads Sub CATFederation()
+        Process.Start("https://www.fcf.cat/")
     End Sub
 
     Public Overloads Sub Expand()

@@ -124,6 +124,9 @@
     <Compile Include="Entities\Player.vb" />
     <Compile Include="Entities\Material.vb" />
     <Compile Include="Entities\Team.vb" />
+    <Compile Include="Windows\RecoverPass.xaml.vb">
+      <DependentUpon>RecoverPass.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\EditPlayer.xaml.vb">
       <DependentUpon>EditPlayer.xaml</DependentUpon>
     </Compile>
@@ -179,6 +182,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Windows\RecoverPass.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Windows\EditPlayer.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -434,6 +441,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Otros.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\rfef.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\fcf.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -17,7 +17,7 @@
         AddHandler btnClose.Click, AddressOf CloseApp
         AddHandler btnRegister.Click, AddressOf RegisterAccount
         AddHandler btnLogin.Click, AddressOf Login
-
+        AddHandler btnRecover.Click, AddressOf RecoverPass
 
     End Sub
 
@@ -36,6 +36,27 @@
         End If
     End Sub
 
+    Public Sub RecoverPass()
+
+        If txtUser.Text <> "" Then
+            Dim db As New DatabaseManager
+            Dim id = db.RecoverUser(txtUser.Text)
+
+            If id <> -1 Then
+                Dim code = GenerarCodigoAleatorio()
+                Dim w As New RecoverPass(code, txtUser.Text)
+
+                w.ShowDialog()
+            Else
+                MessageBox.Show("No existe ningún club con el código indicado.", "Recuperar contraseña", MessageBoxButton.OK, MessageBoxImage.Information)
+            End If
+
+        Else
+            MessageBox.Show("Introduce el código del club para poder restablecer la contraseña.", "Recuperar contraseña", MessageBoxButton.OK, MessageBoxImage.Information)
+        End If
+
+    End Sub
+
     Public Sub RegisterAccount()
 
         Dim w As New ClubRegistration
@@ -45,6 +66,21 @@
         Me.Close()
 
     End Sub
+
+    Public Function GenerarCodigoAleatorio() As String
+        Dim caracteres As String
+        caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+        Dim codigo As String
+        codigo = ""
+        Dim rnd As New Random()
+
+        For i As Integer = 1 To 6
+            Dim indice As Integer = rnd.Next(0, caracteres.Length)
+            codigo &= caracteres(indice)
+        Next i
+
+        GenerarCodigoAleatorio = codigo
+    End Function
 
     Public Sub Login()
 
