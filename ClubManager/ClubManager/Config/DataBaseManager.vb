@@ -68,5 +68,37 @@ Public Class DatabaseManager
         End Try
     End Function
 
+    Public Function RecoverUser(user As String) As Integer
+        Try
+
+            Dim query = "SELECT ID FROM ClubPass WHERE CLUB_CODE = '" & user & "'"
+            Dim id = -1
+            Using connection As New SqlConnection(connectionString)
+                ' Open connection
+                connection.Open()
+
+                Using command As New SqlCommand(query, connection)
+
+                    Dim dr As SqlDataReader = command.ExecuteReader()
+                    While dr.Read()
+
+                        If dr("ID") > 0 Then
+                            id = CInt(dr("ID"))
+                        End If
+
+                    End While
+                    dr.Close()
+                End Using
+
+                connection.Close()
+            End Using
+
+            Return id
+        Catch ex As Exception
+            MessageBox.Show("Error executing query: " & ex.Message)
+            Return False
+        End Try
+    End Function
+
 End Class
 

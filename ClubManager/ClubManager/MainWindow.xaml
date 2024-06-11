@@ -163,13 +163,26 @@
                                FontSize="12"
                                FontWeight="Medium"
                                FontFamily="Arial"/>
-                        <TextBlock Text="Recuperar"
-                               Foreground="Gray"
-                               FontSize="12"
-                               FontWeight="Medium"
-                               FontFamily="Arial"
-                               Cursor="Hand"
-                               Margin="8,0,0,0"/>
+                        <Button x:Name="btnRecover" BorderThickness="0" Content="Recuperar clave" Foreground="Gray" FontSize="12" FontFamily="Arial" Cursor="Hand">
+                            <Button.Style>
+                                <Style TargetType="{x:Type Button}">
+                                    <Setter Property="Background" Value="WhiteSmoke"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="WhiteSmoke"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+                            <Button.Template>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Margin="5,0,0,0" Width="88" Height="20" CornerRadius="5" Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Top"
+                                                      HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
                     </StackPanel>
                 </StackPanel>
             </Grid>
