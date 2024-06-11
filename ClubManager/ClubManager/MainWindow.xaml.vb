@@ -70,7 +70,7 @@
                 Me.Close()
 
             Else
-                '''NO EXISTE USUARIO 
+                MessageBox.Show("Código y contraseña incorrectos.", "Error", MessageBoxButton.OK, MessageBoxImage.Error)
             End If
 
 

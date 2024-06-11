@@ -108,16 +108,24 @@ Public Class ClubRegistration
         'w1.Load()
 
 
-        If clubCode.Text = "" Or clubName.Text = "" Or clubAddress.Text = "" Or clubMail.Text = "" Or clubPhone.Text = "" Or clubPhone.Text.Length < 9 Then
+        Dim pass = ""
+        If clubPassUnmask.Visibility = Visibility.Visible AndAlso clubPassUnmask.Text <> "" Then
+            pass = clubPassUnmask.Text
+        Else
+            If clubPassword.Password <> "" Then
+                pass = clubPassword.Password
+            End If
+        End If
+        If clubCode.Text = "" Or clubName.Text = "" Or clubAddress.Text = "" Or clubMail.Text = "" Or clubPhone.Text = "" Or clubPhone.Text.Length < 9 Or pass = "" Then
 
             MessageBox.Show("¡Faltán datos por introducir! Por favor revisa los datos introducidos.", "Error", MessageBoxButton.OK, MessageBoxImage.Error)
             Return
         Else
 
             Dim club As New Club
-
-            If Club.SaveCheck(clubCode.Text, clubName.Text, clubAddress.Text, clubMail.Text, clubPhone.Text) > -1 Then
-                Club.SetPassword(clubPassUnmask.Text)
+            Dim idClub = Club.SaveCheck(clubCode.Text, clubName.Text, clubAddress.Text, clubMail.Text, clubPhone.Text)
+            If idClub > -1 Then
+                Club.SetPassword(pass)
             Else
                 MessageBox.Show("¡Ya existe un club con el mismo código o mail, prueba a cambiarlos!", "Error", MessageBoxButton.OK, MessageBoxImage.Error)
                 Return
@@ -127,7 +135,27 @@ Public Class ClubRegistration
 
             ' Convertir el byte array a una cadena base64
             Dim base64String As String = ImageManager.ByteArrayToBase64String(imageBytes)
+            ImageManager.SaveImageToDatabase("CLUB", idClub, imagenClub, idClub)
             Club.logoClub = base64String
+
+            Dim db As New DatabaseManager
+            If db.CheckUser(clubCode.Text, pass) Then
+
+                Club.LoadClub(clubCode.Text)
+
+
+                FrameWindow.Instance.Show()
+
+                Dim w1 As New HomeWindow
+                FrameWindow.Instance.CleanWindow()
+                FrameWindow.Instance.Content.Children.Add(w1)
+                w1.Load()
+
+                Me.Close()
+
+            Else
+                MessageBox.Show("Código y contraseña incorrectos.", "Error", MessageBoxButton.OK, MessageBoxImage.Error)
+            End If
 
         End If
 
