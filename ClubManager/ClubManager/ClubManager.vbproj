@@ -122,6 +122,7 @@
     </Compile>
     <Compile Include="Entities\Club.vb" />
     <Compile Include="Entities\Player.vb" />
+    <Compile Include="Entities\Material.vb" />
     <Compile Include="Entities\Team.vb" />
     <Compile Include="Windows\EditPlayer.xaml.vb">
       <DependentUpon>EditPlayer.xaml</DependentUpon>
