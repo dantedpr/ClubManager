@@ -109,8 +109,15 @@
                 <Image Name="Name_Mat" Source="/Images/boxes.png" Width="20" Height="20" Margin="44,129,0,0" Grid.Row="1" RenderTransformOrigin="0.465,-0.73" VerticalAlignment="Top" HorizontalAlignment="Left"/>
 
                 <Image Name="Type_Mat" Source="/Images/options-lines.png" Width="20" Height="20" Margin="44,225,0,0" Grid.Row="1" RenderTransformOrigin="0.415,3.87" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-
-                <Image Name="Cat_Mat" Source="/Images/Otros.png" Width="130" Height="130" Margin="357,82,0,0" Grid.Row="1" RenderTransformOrigin="0.465,-0.73" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                <Image Name="Otros" Source="/Images/Otros.png" Width="130" Height="130" Margin="357,82,0,0" Grid.Row="1" RenderTransformOrigin="0.465,-0.73" VerticalAlignment="Top" HorizontalAlignment="Left" Visibility="Collapsed"/>
+                <Image Name="Petos" Source="/Images/Petos.png" Width="130" Height="130" Margin="357,82,0,0" Grid.Row="1" RenderTransformOrigin="0.465,-0.73" VerticalAlignment="Top" HorizontalAlignment="Left" Visibility="Collapsed"/>
+                <Image Name="Conos" Source="/Images/Conos.png" Width="130" Height="130" Margin="357,82,0,0" Grid.Row="1" RenderTransformOrigin="0.465,-0.73" VerticalAlignment="Top" HorizontalAlignment="Left" Visibility="Collapsed"/>
+                <Image Name="Balones" Source="/Images/Balones.png" Width="130" Height="130" Margin="357,82,0,0" Grid.Row="1" RenderTransformOrigin="0.465,-0.73" VerticalAlignment="Top" HorizontalAlignment="Left" Visibility="Collapsed"/>
+                <Image Name="Porterias" Source="/Images/Porterias.png" Width="130" Height="130" Margin="357,82,0,0" Grid.Row="1" RenderTransformOrigin="0.465,-0.73" VerticalAlignment="Top" HorizontalAlignment="Left" Visibility="Collapsed"/>
+                <Image Name="Campo" Source="/Images/Campo.png" Width="130" Height="130" Margin="357,82,0,0" Grid.Row="1" RenderTransformOrigin="0.465,-0.73" VerticalAlignment="Top" HorizontalAlignment="Left" Visibility="Collapsed"/>
+                <Image Name="Instalacion" Source="/Images/Instalacion.png" Width="130" Height="130" Margin="357,82,0,0" Grid.Row="1" RenderTransformOrigin="0.465,-0.73" VerticalAlignment="Top" HorizontalAlignment="Left" Visibility="Collapsed"/>
+                <Image Name="Escaleras" Source="/Images/Escaleras.png" Width="130" Height="130" Margin="357,82,0,0" Grid.Row="1" RenderTransformOrigin="0.465,-0.73" VerticalAlignment="Top" HorizontalAlignment="Left" Visibility="Collapsed"/>
+                <Image Name="Vestuario" Source="/Images/Vestuario.png" Width="130" Height="130" Margin="357,82,0,0" Grid.Row="1" RenderTransformOrigin="0.465,-0.73" VerticalAlignment="Top" HorizontalAlignment="Left" Visibility="Collapsed"/>
 
             </Grid>
         </Border>

@@ -263,7 +263,11 @@ Public Class Player
         Dim birth = reader("BIRTHDATE").ToString()
         Date.TryParse(birth, BirthDate)
         Club_ID = CInt(reader("CLUB_ID"))
-        Team_ID = CInt(reader("TEAM_ID"))
+        If reader("TEAM_ID").ToString() <> "" Then
+            Team_ID = CInt(reader("TEAM_ID"))
+        Else
+            Team_ID = -1
+        End If
         TeamName = reader("TEAMNAME").ToString()
         Status = reader("STATUS")
     End Sub
