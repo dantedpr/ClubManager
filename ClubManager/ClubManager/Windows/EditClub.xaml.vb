@@ -54,6 +54,7 @@ Class EditClub
         clubMail.Text = Club.Mail
         clubName.Text = Club.Name
 
+        imagenSeleccionada.Source = ImageManager.LoadImageFromDatabase("CLUB", Club.ID, Club.ID)
         AddHandler btnPassword.Click, AddressOf showPassword
     End Sub
 
