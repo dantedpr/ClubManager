@@ -94,6 +94,16 @@ EditPlayer
 InitializeComponent
 </summary>
 </member>
+<member name="T:ClubManager.EditMaterial">
+<summary>
+EditMaterial
+</summary>
+</member>
+<member name="M:ClubManager.EditMaterial.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
 <member name="T:ClubManager.EditTeam">
 <summary>
 EditTeam
