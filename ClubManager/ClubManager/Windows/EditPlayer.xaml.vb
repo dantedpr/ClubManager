@@ -8,7 +8,7 @@ Public Class EditPlayer
     Public Property _player As Player
     Private isMaximized As Boolean = False
     Private previousWindowState As WindowState
-    Private imagenClub As BitmapImage
+    Private imagenPlayer As BitmapImage
     Public Sub New()
 
         ' Esta llamada es exigida por el diseñador.
@@ -50,7 +50,7 @@ Public Class EditPlayer
         BUT_Image.Background = New SolidColorBrush(Colors.White)
         BUT_Image.GetBackground = New SolidColorBrush(Colors.LightBlue)
         BUT_Image.ImageName = "upload.png"
-        BUT_Image.ButText = "Seleccionar escudo"
+        BUT_Image.ButText = "Seleccionar imagen"
 
         Dim li = Club.GetTeamsName()
         playerTeam.Items.Clear()
@@ -71,8 +71,7 @@ Public Class EditPlayer
             playerPhone.Text = _player.Phone
             playerMail.Text = _player.Mail
             playerAge.SelectedDate = _player.BirthDate
-
-
+            imagenSeleccionada.Source = ImageManager.LoadImageFromDatabase("PLAYER", _player.ID, Club.ID)
 
             For Each cat In playerTeam.Items
                 If cat.ToString() = _player.TeamName Then
@@ -80,6 +79,7 @@ Public Class EditPlayer
                 End If
             Next
         End If
+
 
     End Sub
 
@@ -99,7 +99,7 @@ Public Class EditPlayer
             Try
                 Dim rutaImagen As String = openFileDialog.FileName
                 Dim imagen As New BitmapImage(New Uri(rutaImagen))
-                imagenClub = imagen
+                imagenPlayer = imagen
                 imagenSeleccionada.Source = imagen
             Catch ex As Exception
                 MessageBox.Show($"Error al cargar la imagen: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error)
@@ -140,6 +140,7 @@ Public Class EditPlayer
             '       phoneP As String, addressP As String, birthdateP As Date, teamID As String, statusP As Boolean)
 
             Dim teamID = -1
+            Dim playerID = _player.ID
             If playerTeam.SelectedItem.ToString() <> "" Then
                 teamID = Club.GetTeamID(playerTeam.SelectedItem.ToString())
             End If
@@ -149,8 +150,13 @@ Public Class EditPlayer
             Else
                 Dim t1 = New Player(Club.ID, playerName.Text, playerLast.Text, playerLast2.Text, playerMail.Text, playerPhone.Text, playerAddress.Text,
                                     playerAge.SelectedDate.Value, teamID, True)
-                t1.SavePlayer()
+                playerID = t1.SavePlayer()
             End If
+
+            If imagenPlayer IsNot Nothing Then
+                ImageManager.UpdateImage("PLAYER", playerID, imagenPlayer, Club.ID)
+            End If
+
             MessageBox.Show("Se han guardado los datos del jugador.", "Jugador", MessageBoxButton.OK, MessageBoxImage.Information)
         End If
 

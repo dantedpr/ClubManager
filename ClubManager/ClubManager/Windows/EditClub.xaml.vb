@@ -12,7 +12,6 @@ Class EditClub
 
         ' Esta llamada es exigida por el diseñador.
         InitializeComponent()
-        Load()
         ' Agregue cualquier inicialización después de la llamada a InitializeComponent().
 
     End Sub
@@ -95,6 +94,9 @@ Class EditClub
             End If
             Club.LoadClub(Club.Code)
             FrameWindow.Instance.LabelClub.Content = Club.Name
+            If imagenClub IsNot Nothing Then
+                ImageManager.UpdateImage("CLUB", Club.ID, imagenClub, Club.ID)
+            End If
             MessageBox.Show("Información del club actualizada con éxito.", "Club", MessageBoxButton.OK, MessageBoxImage.Information)
         Else
 

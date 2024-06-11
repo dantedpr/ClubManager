@@ -128,7 +128,10 @@ Public Class EditTeam
 
         Dim dt As New DataTable()
 
-        dt = Club.GetAllPlayers("", "", _team.Name, "", True)
+        If _team.Name <> "" Then
+            dt = Club.GetAllPlayers("", "", _team.Name, "", True)
+        End If
+
 
         Dim xquery = From a In dt.AsEnumerable
                      Select New With {.ID = a.Item("ID"), .NAME = a.Item("NAME"), .FULLNAME = a.Item("FULLNAME"), .AGE = a.Item("AGE"), .MAIL = a.Item("MAIL"), .PHONE = a.Item("PHONE"),

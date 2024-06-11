@@ -135,7 +135,9 @@ Public Class ClubRegistration
 
             ' Convertir el byte array a una cadena base64
             Dim base64String As String = ImageManager.ByteArrayToBase64String(imageBytes)
-            ImageManager.SaveImageToDatabase("CLUB", idClub, imagenClub, idClub)
+            If imagenClub IsNot Nothing Then
+                ImageManager.SaveImageToDatabase("CLUB", idClub, imagenClub, idClub)
+            End If
             Club.logoClub = base64String
 
             Dim db As New DatabaseManager
