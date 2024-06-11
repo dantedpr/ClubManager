@@ -123,7 +123,7 @@ Class HomeWindow
 
         Dim w = FrameWindow.Instance
         w.CleanWindow()
-        Dim w1 As New TeamsWindow
+        Dim w1 As New MaterialsWindow
         w.Content.Children.Add(w1)
 
         w1.Load()

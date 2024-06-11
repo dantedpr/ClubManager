@@ -44,6 +44,9 @@ Class MaterialsWindow
         matType.Items.Add("Balones")
         matType.Items.Add("Porterias")
         matType.Items.Add("Escaleras")
+        matType.Items.Add("Campo")
+        matType.Items.Add("Instalacion")
+        matType.Items.Add("Vestuario")
         matType.Items.Add("Otros")
         matType.SelectedIndex = 0
         AddHandler matType.SelectionChanged, AddressOf Seach
@@ -60,7 +63,7 @@ Class MaterialsWindow
         'dt = Club.GetAllMaterials(matName.Text, matType.SelectedItem.ToString())
 
         Dim xquery = From a In dt.AsEnumerable
-                     Select New With {.ID = a.Item("ID"), .NAME = a.Item("NAME"), .CATEGORY = a.Item("CATEGORY"), .DIVISION = a.Item("DIVISION"), .LETTER = a.Item("LETTER")
+                     Select New With {.ID = a.Item("ID"), .NAME = a.Item("NAME"), .CATEGORY = a.Item("CATEGORY"), .QUANTITY = a.Item("QUANTITY")
         }
 
         Info_Grid.DG.ItemsSource = xquery
@@ -68,14 +71,13 @@ Class MaterialsWindow
         Info_Grid.AddColumn("ID", "ID", 50, True, System.Windows.HorizontalAlignment.Left, "INTEGER")
         Info_Grid.AddColumn("Nombre", "NAME", 200, True, System.Windows.HorizontalAlignment.Left, "TEXT")
         Info_Grid.AddColumn("Categoría", "CATEGORY", 200, True, System.Windows.HorizontalAlignment.Left, "TEXT")
-        Info_Grid.AddColumn("División", "DIVISION", 200, True, System.Windows.HorizontalAlignment.Left, "TEXT")
-        Info_Grid.AddColumn("Letra", "LETTER", 100, True, System.Windows.HorizontalAlignment.Left, "TEXT")
+        Info_Grid.AddColumn("Cantidad", "QUANTITY", 200, True, System.Windows.HorizontalAlignment.Left, "TEXT")
         Info_Grid.GridCounter()
 
     End Sub
 
     Private Sub CreateMaterial(sender As Object, e As RoutedEventArgs)
-        Dim w As New EditTeam
+        Dim w As New EditMaterial
 
         w.ShowDialog()
         e.Handled = True

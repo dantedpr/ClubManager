@@ -40,7 +40,7 @@
                         <ColumnDefinition Width="25"/>
                         <ColumnDefinition Width="5"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Text="Plantilla"
+                    <TextBlock Text="Jugador"
                                Foreground="White"
                                FontWeight="Bold"
                                FontSize="15"

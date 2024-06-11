@@ -10,11 +10,11 @@ none
 false
 
 C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\Application.xaml
-13-393456256
+14-1431295992
 76-2124844926
-231491308069
+24-265599793
 251577987113
-Controls\CMGrid.xaml;Controls\CMButton.xaml;Controls\CMText.xaml;MainWindow.xaml;Windows\EditPlayer.xaml;Windows\EditTeam.xaml;Windows\ClubRegistration.xaml;Windows\EditClub.xaml;Windows\MaterialsWindow.xaml;Windows\TeamsWindow.xaml;Windows\PlayersWindow.xaml;Windows\HomeWindow.xaml;Windows\FrameWindow.xaml;
+Controls\CMGrid.xaml;Controls\CMButton.xaml;Controls\CMText.xaml;MainWindow.xaml;Windows\EditPlayer.xaml;Windows\EditMaterial.xaml;Windows\EditTeam.xaml;Windows\ClubRegistration.xaml;Windows\EditClub.xaml;Windows\MaterialsWindow.xaml;Windows\TeamsWindow.xaml;Windows\PlayersWindow.xaml;Windows\HomeWindow.xaml;Windows\FrameWindow.xaml;
 
 False
 
