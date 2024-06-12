@@ -121,9 +121,16 @@
       <DependentUpon>CMText.xaml</DependentUpon>
     </Compile>
     <Compile Include="Entities\Club.vb" />
+    <Compile Include="Entities\Training.vb" />
     <Compile Include="Entities\Player.vb" />
     <Compile Include="Entities\Material.vb" />
     <Compile Include="Entities\Team.vb" />
+    <Compile Include="Windows\EditTraining.xaml.vb">
+      <DependentUpon>EditTraining.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\TrainingsWindow.xaml.vb">
+      <DependentUpon>TrainingsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\RecoverPass.xaml.vb">
       <DependentUpon>RecoverPass.xaml</DependentUpon>
     </Compile>
@@ -182,6 +189,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Windows\EditTraining.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\TrainingsWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Windows\RecoverPass.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -447,6 +462,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\fcf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\restart.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

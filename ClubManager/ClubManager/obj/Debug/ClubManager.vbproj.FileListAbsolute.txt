@@ -152,3 +152,7 @@ C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\Windows\E
 C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\Windows\EditMaterial.baml
 C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\Windows\RecoverPass.g.vb
 C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\Windows\RecoverPass.baml
+C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\Windows\TrainingsWindow.g.vb
+C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\Windows\TrainingsWindow.baml
+C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\Windows\EditTraining.g.vb
+C:\Users\dante\Documents\ClubManager\ClubManager\ClubManager\obj\Debug\Windows\EditTraining.baml
