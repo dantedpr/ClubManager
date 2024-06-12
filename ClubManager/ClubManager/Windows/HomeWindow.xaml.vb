@@ -71,7 +71,7 @@ Class HomeWindow
         AddHandler BUT_Player.Click, AddressOf Players
         AddHandler BUT_Team.Click, AddressOf Teams
         AddHandler BUT_Material.Click, AddressOf Materials
-
+        AddHandler BUT_Training.Click, AddressOf Trainings
         Dim dt As New DataTable()
 
         dt = Club.GetAllClubs()
@@ -129,6 +129,18 @@ Class HomeWindow
         w1.Load()
 
     End Sub
+
+    Public Sub Trainings()
+
+        Dim w = FrameWindow.Instance
+        w.CleanWindow()
+        Dim w1 As New TrainingsWindow
+        w.Content.Children.Add(w1)
+
+        w1.Load()
+
+    End Sub
+
 
     Public Sub RegisterAccount()
 

@@ -84,6 +84,26 @@ CMText
 InitializeComponent
 </summary>
 </member>
+<member name="T:ClubManager.EditTraining">
+<summary>
+EditTraining
+</summary>
+</member>
+<member name="M:ClubManager.EditTraining.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
+<member name="T:ClubManager.TrainingsWindow">
+<summary>
+TrainingsWindow
+</summary>
+</member>
+<member name="M:ClubManager.TrainingsWindow.InitializeComponent">
+<summary>
+InitializeComponent
+</summary>
+</member>
 <member name="T:ClubManager.RecoverPass">
 <summary>
 RecoverPass
