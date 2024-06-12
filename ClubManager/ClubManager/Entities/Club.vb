@@ -478,6 +478,70 @@ Public Class Club
         End Try
     End Function
 
+    Public Shared Function GetInstallations() As List(Of String)
+        Try
+
+            Dim query = "SELECT * FROM Material WHERE CATEGORY = 'Instalacion' AND CLUB_ID = " & Club.ID
+
+
+            Dim db As New DatabaseManager
+            Dim li As New List(Of String)
+
+            Using connection As New SqlConnection(db.connectionString)
+                ' Open connection
+                connection.Open()
+
+                Using command As New SqlCommand(query, connection)
+
+                    Dim dr As SqlDataReader = command.ExecuteReader()
+
+                    While dr.Read()
+                        li.Add(dr("NAME").ToString())
+                    End While
+                    dr.Close()
+                End Using
+
+                connection.Close()
+            End Using
+
+            Return li
+        Catch ex As Exception
+            MessageBox.Show("Error executing query: " & ex.Message)
+            Return Nothing
+        End Try
+    End Function
+    Public Shared Function GetPitches() As List(Of String)
+        Try
+
+            Dim query = "SELECT * FROM Material WHERE CATEGORY = 'Campo' AND CLUB_ID = " & Club.ID
+
+            Dim db As New DatabaseManager
+            Dim li As New List(Of String)
+
+            Using connection As New SqlConnection(db.connectionString)
+                ' Open connection
+                connection.Open()
+
+                Using command As New SqlCommand(query, connection)
+
+                    Dim dr As SqlDataReader = command.ExecuteReader()
+
+                    While dr.Read()
+                        li.Add(dr("NAME").ToString())
+                    End While
+                    dr.Close()
+                End Using
+
+                connection.Close()
+            End Using
+
+            Return li
+        Catch ex As Exception
+            MessageBox.Show("Error executing query: " & ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
     Public Shared Function GetTeamID(name As String) As Integer
         Try
 
@@ -509,6 +573,71 @@ Public Class Club
         Catch ex As Exception
             MessageBox.Show("Error executing query: " & ex.Message)
             Return Nothing
+        End Try
+    End Function
+
+    Public Shared Function GetTrainings(dateIni As Date, dateFin As Date) As DataTable
+        Try
+
+            Dim query = "SELECT * FROM Trainings WHERE CLUB_ID = " & Club.ID
+
+            query = query & "AND [DATE] >= '" & dateIni & "' AND [DATE] <= '" & dateFin & "' ORDER BY DATE ASC"
+
+            Dim exists = False
+            Dim db As New DatabaseManager
+            Dim dataTable As New DataTable()
+
+            Using connection As New SqlConnection(db.connectionString)
+                ' Open connection
+                connection.Open()
+
+                Using command As New SqlCommand(query, connection)
+
+                    Dim dr As SqlDataReader = command.ExecuteReader()
+                    dataTable.Load(dr)
+                    dr.Close()
+                End Using
+
+                connection.Close()
+            End Using
+
+            Return dataTable
+        Catch ex As Exception
+            MessageBox.Show("Error executing query: " & ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
+    Public Shared Function CheckTraining(dateT As Date, hourT As String, stadiumT As String, groundT As String, Optional id As Integer = -1) As Boolean
+        Try
+
+            Dim query = "SELECT ID FROM Trainings WHERE CLUB_ID = '" & Club.ID & "' AND [DATE] = '" & dateT & "' AND HOUR = '" & hourT & "' AND STADIUM = '" & stadiumT & "' AND GROUND = '" & groundT & "' AND ID <> " & id
+            Dim exists = False
+            Dim db As New DatabaseManager
+            Using connection As New SqlConnection(db.connectionString)
+                ' Open connection
+                connection.Open()
+
+                Using command As New SqlCommand(query, connection)
+
+                    Dim dr As SqlDataReader = command.ExecuteReader()
+                    While dr.Read()
+
+                        If dr("ID") > 0 Then
+                            exists = True
+                        End If
+
+                    End While
+                    dr.Close()
+                End Using
+
+                connection.Close()
+            End Using
+
+            Return exists
+        Catch ex As Exception
+            MessageBox.Show("Error executing query: " & ex.Message)
+            Return False
         End Try
     End Function
 
