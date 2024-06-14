@@ -1,5 +1,6 @@
 ﻿Imports System.Data
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+Imports Microsoft.Office.Interop.Excel
 Imports Microsoft.Win32
 
 Public Class EditPlayer
@@ -39,6 +40,14 @@ Public Class EditPlayer
         BUT_Aceptar.GetBackground = New SolidColorBrush(Colors.LightGreen)
         BUT_Aceptar.ImageName = "accept.png"
         BUT_Aceptar.ButText = "Aceptar"
+
+        AddHandler BUT_File.Click, AddressOf SaveFile
+        BUT_File.Background = New SolidColorBrush(Colors.White)
+        'BUT_Aceptar.GetBackground = New SolidColorBrush(System.Windows.Media.Color.FromRgb(210, 213, 214))
+        BUT_File.GetBackground = New SolidColorBrush(Colors.LightGreen)
+        BUT_File.ImageName = "accept.png"
+        BUT_File.ButText = "Subir ficha"
+
 
         AddHandler BUT_Cancel.Click, AddressOf CancelCreation
         BUT_Cancel.Background = New SolidColorBrush(Colors.White)
@@ -165,5 +174,30 @@ Public Class EditPlayer
 
     End Sub
 
+    Private Sub SaveFile(sender As Object, e As RoutedEventArgs)
+
+        Dim openFileDialog As New OpenFileDialog()
+        openFileDialog.Filter = "PDF Files (*.pdf)|*.pdf"
+        openFileDialog.Multiselect = False
+
+        Dim db As New DatabaseManager
+        If openFileDialog.ShowDialog() = True Then
+            Dim filePath As String = openFileDialog.FileName
+            Dim bFile = FileToByteArray(filePath)
+
+            db.SaveFileToDatabase(openFileDialog.FileName, bFile)
+        End If
+
+
+        db.LoadFileFromDatabaseAndOpen(1)
+
+        e.Handled = True
+        Me.Close()
+
+    End Sub
+
+    Private Function FileToByteArray(filePath As String) As Byte()
+        Return IO.File.ReadAllBytes(filePath)
+    End Function
 
 End Class
