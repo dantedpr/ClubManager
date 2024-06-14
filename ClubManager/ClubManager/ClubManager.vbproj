@@ -472,6 +472,9 @@
   <ItemGroup>
     <Resource Include="Images\restart.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\football-field.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
