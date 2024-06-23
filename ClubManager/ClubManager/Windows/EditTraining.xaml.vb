@@ -9,6 +9,7 @@ Public Class EditTraining
     Private isMaximized As Boolean = False
     Private previousWindowState As WindowState
     Private imagenPlayer As BitmapImage
+    Private mats As List(Of String)
     Public Sub New()
 
         ' Esta llamada es exigida por el diseñador.
@@ -56,6 +57,7 @@ Public Class EditTraining
         newMat.st1.HorizontalAlignment = HorizontalAlignment.Left
         newMat.LBL_Text.FontSize = 8
         newMat.LBL_Text.Margin = New Thickness(15, 1, 0, 0)
+        AddHandler newMat.Click, AddressOf AddMaterial
 
         delMat.GetBackground = New SolidColorBrush(Colors.White)
         delMat.ImageName = "delete.png"
@@ -65,7 +67,7 @@ Public Class EditTraining
         delMat.st1.HorizontalAlignment = HorizontalAlignment.Left
         delMat.LBL_Text.FontSize = 8
         delMat.LBL_Text.Margin = New Thickness(15, 1, 0, 0)
-
+        AddHandler delMat.Click, AddressOf DeleteMaterial
         Dim li = Club.GetTeamsName()
         trainingTeam.Items.Clear()
         trainingTeam.Items.Add("")
@@ -133,6 +135,7 @@ Public Class EditTraining
             observations.Text = _training.Observations
         End If
 
+        LoadMaterialTraining()
 
     End Sub
 
@@ -166,6 +169,46 @@ Public Class EditTraining
         End If
     End Sub
 
+    Public Sub LoadMaterialTraining()
+
+
+        Dim dt As New DataTable()
+
+        dt = _training.GetMaterials(_training.ID)
+
+
+
+        Dim xquery = From a In dt.AsEnumerable
+                     Select New With {.ID = a.Item("ID"), .NAME = a.Item("NAME"), .QUANTITY = a.Item("QUANTITY")
+        }
+
+
+        Info_Grid.DG.ItemsSource = xquery
+        Info_Grid.DG.Columns.Clear()
+        Info_Grid.AddColumn("ID", "ID", 50, True, System.Windows.HorizontalAlignment.Left, "INTEGER")
+        Info_Grid.AddColumn("Nombre", "NAME", 100, True, System.Windows.HorizontalAlignment.Left, "TEXT")
+        Info_Grid.AddColumn("Cantidad", "QUANTITY", 100, True, System.Windows.HorizontalAlignment.Left, "INTEGER")
+        Info_Grid.GridCounter()
+
+        mats = New List(Of String)
+
+        For Each x In xquery
+            mats.Add(x.NAME)
+        Next
+
+        Dim liMat = Club.GetMaterialsNames()
+
+        materialCombo.Items.Clear()
+        materialCombo.Items.Add("")
+        materialCombo.SelectedIndex = 0
+        matQuantity.Text = ""
+        For Each mat In liMat
+            If Not mats.Contains(mat) Then
+                materialCombo.Items.Add(mat)
+            End If
+        Next
+
+    End Sub
 
     Private Sub SaveTraining(sender As Object, e As RoutedEventArgs)
 
@@ -204,5 +247,50 @@ Public Class EditTraining
 
     End Sub
 
+    Private Sub AddMaterial(sender As Object, e As RoutedEventArgs)
 
+        If materialCombo.SelectedItem.ToString() <> "" And matQuantity.Text <> "" AndAlso CInt(matQuantity.Text) > 0 Then
+            Dim quantity = Club.CheckQuantity(materialCombo.SelectedItem.ToString())
+
+            If quantity >= CInt(matQuantity.Text) Then
+                _training.AddMaterial(materialCombo.SelectedItem.ToString(), CInt(matQuantity.Text))
+            Else
+                MessageBox.Show("La cantidad no puede ser superior a " & quantity & ", ya que es la cantidad disponible.", "Entrenamiento", MessageBoxButton.OK, MessageBoxImage.Information)
+                Return
+            End If
+        Else
+            MessageBox.Show("No ha seleccionado un material o la cantidad no es superior a 0.", "Entrenamiento", MessageBoxButton.OK, MessageBoxImage.Information)
+            Return
+        End If
+
+        LoadMaterialTraining()
+
+        e.Handled = True
+
+    End Sub
+
+    Private Sub DeleteMaterial(sender As Object, e As RoutedEventArgs)
+        Dim dg = Me.Info_Grid.DG
+
+        If dg.SelectedItems.Count > 0 Then
+            If MessageBox.Show("¿Está seguro que desea eliminar el material de la sesión?", "Eliminar material de la sesión", MessageBoxButton.YesNo, MessageBoxImage.Information) = MessageBoxResult.Yes Then
+                Dim drv = Me.Info_Grid.DG.SelectedItem
+                _training.DeleteMaterial(drv.ID)
+                e.Handled = True
+
+                LoadMaterialTraining()
+            Else
+
+                e.Handled = True
+                Exit Sub
+            End If
+
+            e.Handled = True
+        Else
+            MessageBox.Show("Debe seleccionar primero un material de la tabla.", "Eliminar material de la sesión", MessageBoxButton.OK, MessageBoxImage.Information)
+        End If
+
+        e.Handled = True
+
+    End Sub
 End Class

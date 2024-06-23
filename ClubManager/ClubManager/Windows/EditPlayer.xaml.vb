@@ -1,5 +1,6 @@
 ﻿Imports System.Data
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+Imports Microsoft.Office.Interop.Excel
 Imports Microsoft.Win32
 
 Public Class EditPlayer
@@ -39,6 +40,24 @@ Public Class EditPlayer
         BUT_Aceptar.GetBackground = New SolidColorBrush(Colors.LightGreen)
         BUT_Aceptar.ImageName = "accept.png"
         BUT_Aceptar.ButText = "Aceptar"
+
+        AddHandler BUT_File.Click, AddressOf SaveFile
+        BUT_File.Background = New SolidColorBrush(Colors.White)
+        'BUT_Aceptar.GetBackground = New SolidColorBrush(System.Windows.Media.Color.FromRgb(210, 213, 214))
+        BUT_File.GetBackground = New SolidColorBrush(Colors.WhiteSmoke)
+        BUT_File.ImageName = "upload.png"
+        BUT_File.ButText = "Subir ficha"
+
+
+        BUT_File2.GetBackground = New SolidColorBrush(Colors.White)
+        BUT_File2.ImageName = "pdf.png"
+        BUT_File2.ButText = ""
+        BUT_File2.ToolTip = "Añadir material"
+        BUT_File2.Border = 0
+        BUT_File2.st1.HorizontalAlignment = HorizontalAlignment.Left
+        BUT_File2.LBL_Text.FontSize = 8
+        BUT_File2.LBL_Text.Margin = New Thickness(15, 1, 0, 0)
+        AddHandler BUT_File2.Click, AddressOf OpenFile
 
         AddHandler BUT_Cancel.Click, AddressOf CancelCreation
         BUT_Cancel.Background = New SolidColorBrush(Colors.White)
@@ -165,5 +184,40 @@ Public Class EditPlayer
 
     End Sub
 
+    Private Sub SaveFile(sender As Object, e As RoutedEventArgs)
+
+        Dim openFileDialog As New OpenFileDialog()
+        openFileDialog.Filter = "PDF Files (*.pdf)|*.pdf"
+        openFileDialog.Multiselect = False
+
+        Dim db As New FileManager
+        Dim existsFile = _player.GetFileID()
+        If openFileDialog.ShowDialog() = True Then
+            Dim filePath As String = openFileDialog.FileName
+            Dim bFile = FileToByteArray(filePath)
+
+            If existsFile = -1 Then
+                db.SaveFileToDatabase(openFileDialog.FileName, bFile, _player.ID)
+                MessageBox.Show("Se ha guardado el documento asociado al jugador.", "Jugador", MessageBoxButton.OK, MessageBoxImage.Information)
+            Else
+                db.UpdateFileToDatabase(openFileDialog.FileName, bFile, existsFile)
+                MessageBox.Show("Se ha actualizado el documento asociado al jugador.", "Jugador", MessageBoxButton.OK, MessageBoxImage.Information)
+            End If
+        End If
+        e.Handled = True
+
+    End Sub
+
+    Private Sub OpenFile(sender As Object, e As RoutedEventArgs)
+
+        Dim db As New FileManager
+        db.LoadFileFromDatabaseAndOpen(_player.GetFileID())
+        e.Handled = True
+
+    End Sub
+
+    Private Function FileToByteArray(filePath As String) As Byte()
+        Return IO.File.ReadAllBytes(filePath)
+    End Function
 
 End Class

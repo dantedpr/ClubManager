@@ -178,7 +178,7 @@ Public Class Player
 
         Try
 
-            UpdatePlayers()
+            'UpdatePlayers()
 
             Dim query As String = "DELETE [Players] WHERE ID = " & ID & ""
 
@@ -198,27 +198,27 @@ Public Class Player
 
     End Sub
 
-    Public Sub UpdatePlayers()
+    'Public Sub UpdatePlayers()
 
-        Try
-            Dim query As String = "UPDATE Players SET [TEAM_ID] = @p1 WHERE TEAM_ID = " & ID & ""
+    '    Try
+    '        Dim query As String = "UPDATE Players SET [TEAM_ID] = @p1 WHERE TEAM_ID = " & ID & ""
 
-            Dim db As New DatabaseManager
+    '        Dim db As New DatabaseManager
 
-            Using connection As New SqlConnection(db.connectionString)
-                connection.Open()
+    '        Using connection As New SqlConnection(db.connectionString)
+    '            connection.Open()
 
-                Using command As New SqlCommand(query, connection)
-                    command.Parameters.AddWithValue("@p1", DBNull.Value)
-                    command.ExecuteScalar()
-                End Using
-            End Using
+    '            Using command As New SqlCommand(query, connection)
+    '                command.Parameters.AddWithValue("@p1", DBNull.Value)
+    '                command.ExecuteScalar()
+    '            End Using
+    '        End Using
 
-        Catch ex As Exception
-            Console.WriteLine("Error al actualizar la plantilla: " & ex.Message)
-        End Try
+    '    Catch ex As Exception
+    '        Console.WriteLine("Error al actualizar la plantilla: " & ex.Message)
+    '    End Try
 
-    End Sub
+    'End Sub
 
     Public Sub LoadPlayer(playerID As Integer)
 
@@ -271,6 +271,38 @@ Public Class Player
         TeamName = reader("TEAMNAME").ToString()
         Status = reader("STATUS")
     End Sub
+
+    Public Function GetFileID() As Integer
+
+        Try
+
+            Dim db As New DatabaseManager
+            Dim fileId = -1
+            Dim s = "SELECT ID FROM FILES WHERE TYPE = 'PLAYER' AND ITEM_ID = " & ID
+
+            Using connection As New SqlConnection(db.connectionString)
+                ' Open connection
+                connection.Open()
+
+                Using command As New SqlCommand(s, connection)
+
+                    Dim dr As SqlDataReader = command.ExecuteReader()
+
+                    If dr.Read Then
+                        fileId = CInt(dr("ID"))
+                    End If
+
+                    dr.Close()
+                End Using
+
+                connection.Close()
+            End Using
+            Return fileId
+        Catch ex As Exception
+            MessageBox.Show("Error executing query: " & ex.Message)
+            Return Nothing
+        End Try
+    End Function
 
 
 End Class

@@ -1,4 +1,6 @@
 ﻿Imports System.Data
+Imports System.Diagnostics.Eventing
+Imports Microsoft.Office.Interop.Excel
 
 Class HomeWindow
 
@@ -72,19 +74,21 @@ Class HomeWindow
         AddHandler BUT_Team.Click, AddressOf Teams
         AddHandler BUT_Material.Click, AddressOf Materials
         AddHandler BUT_Training.Click, AddressOf Trainings
-        Dim dt As New DataTable()
 
-        dt = Club.GetAllClubs()
 
-        Dim xquery = From a In dt.AsEnumerable
-                     Select New With {.ID = a.Item("ID"), .NAME = a.Item("NAME")
-        }
+        Dim installations = Club.GetInstallations()
 
-        Info_Grid.DG.ItemsSource = xquery
-        Info_Grid.DG.Columns.Clear()
-        Info_Grid.AddColumn("ID", "ID", 50, True, System.Windows.HorizontalAlignment.Left, "TEXT")
-        Info_Grid.AddColumn("NAME", "NAME", 100, True, System.Windows.HorizontalAlignment.Left, "TEXT")
-        Info_Grid.GridCounter()
+        clubInstallation.Items.Clear()
+        clubInstallation.Items.Add("")
+        clubInstallation.SelectedIndex = 0
+
+        For Each ins In installations
+            clubInstallation.Items.Add(ins)
+            clubInstallation.SelectedIndex = 1
+        Next
+
+        AddHandler clubInstallation.SelectionChanged, AddressOf SearchTrainings
+        UpdateGrid()
 
     End Sub
 
@@ -97,7 +101,10 @@ Class HomeWindow
 
         w1.Load()
     End Sub
-
+    Private Sub SearchTrainings(sender As Object, e As RoutedEventArgs)
+        UpdateGrid()
+        e.Handled = True
+    End Sub
     Public Sub Players()
 
         Dim w = FrameWindow.Instance
@@ -142,8 +149,41 @@ Class HomeWindow
     End Sub
 
 
-    Public Sub RegisterAccount()
+    Public Sub UpdateGrid()
 
+
+        LabelVersion1.Content = ""
+        LabelVersion2.Content = ""
+        LabelVersion3.Content = ""
+        LabelVersion4.Content = ""
+
+        If clubInstallation.SelectedItem.ToString() <> "" Then
+            Dim dt = Club.GetNextTrainings(clubInstallation.SelectedItem.ToString())
+
+            Dim xquery = From a In dt.AsEnumerable
+                         Select New With {.ID = a.Item("ID"), .TEAM = a.Item("TEAM"), .DATE = a.Item("DATE"), .HOUR = a.Item("HOUR"), .STADIUM = a.Item("STADIUM"), .GROUND = a.Item("GROUND"), .OBSERVATIONS = a.Item("OBSERVATIONS")
+            }
+            For Each training In xquery
+
+                Dim timeValue As TimeSpan = training.HOUR
+                ' Format the time value as HH:mm string
+                Dim Hour = timeValue.ToString("hh\:mm")
+
+                If training.GROUND = "Campo 1" Then
+                    LabelVersion1.Content = training.TEAM & " - " & training.DATE & " " & Hour
+                End If
+                If training.GROUND = "Campo 2" Then
+                    LabelVersion2.Content = training.TEAM & " - " & training.DATE & " " & Hour
+                End If
+                If training.GROUND = "Campo 3" Then
+                    LabelVersion3.Content = training.TEAM & " - " & training.DATE & " " & Hour
+                End If
+                If training.GROUND = "Campo 4" Then
+                    LabelVersion4.Content = training.TEAM & " - " & training.DATE & " " & Hour
+                End If
+
+            Next
+        End If
 
     End Sub
 

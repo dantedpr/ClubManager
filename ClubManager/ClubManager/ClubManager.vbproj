@@ -110,6 +110,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Config\FileManager.vb" />
     <Compile Include="Config\ImageManager.vb" />
     <Compile Include="Controls\CMGrid.xaml.vb">
       <DependentUpon>CMGrid.xaml</DependentUpon>
@@ -471,6 +472,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\restart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\football-field.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\pdf.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
