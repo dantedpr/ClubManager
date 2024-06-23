@@ -3,6 +3,7 @@ Imports CefSharp.DevTools.Autofill
 Imports System.Net
 Imports Microsoft.Office.Interop.Excel
 Imports System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox
+Imports System.Data
 
 Public Class Training
 
@@ -90,13 +91,13 @@ Public Class Training
 
     End Sub
 
-    Public Sub LoadTraining(materialID As Integer)
+    Public Sub LoadTraining(trainingID As Integer)
 
         Try
 
             Dim db As New DatabaseManager
 
-            Dim s = "SELECT * FROM Trainings WHERE ID = " & materialID & ""
+            Dim s = "SELECT * FROM Trainings WHERE ID = " & trainingID & ""
 
             Using connection As New SqlConnection(db.connectionString)
                 ' Open connection
@@ -156,5 +157,89 @@ Public Class Training
         End Try
 
     End Sub
+
+    Public Function GetMaterials(trainingID) As System.Data.DataTable
+
+        Try
+
+            Dim db As New DatabaseManager
+            Dim dt As New System.Data.DataTable()
+            Dim s = "  SELECT mt.ID, m.Name, mt.Quantity FROM [ClubManager].[dbo].[MaterialTrainings] mt LEFT JOIN Material m ON m.ID = mt.Material_ID WHERE mt.Training_ID = " & trainingID & ""
+
+            Using connection As New SqlConnection(db.connectionString)
+                ' Open connection
+                connection.Open()
+
+                Using command As New SqlCommand(s, connection)
+
+                    Dim dr As SqlDataReader = command.ExecuteReader()
+                    dt.Load(dr)
+                    dr.Close()
+                End Using
+
+                connection.Close()
+            End Using
+
+            Return dt
+        Catch ex As Exception
+            MessageBox.Show("Error executing query: " & ex.Message)
+            Return Nothing
+        End Try
+
+    End Function
+
+    Public Sub DeleteMaterial(matID As Integer)
+
+        Try
+
+            Dim query As String = "DELETE [MaterialTrainings] WHERE ID = " & matID & ""
+
+            Dim db As New DatabaseManager
+
+            Using connection As New SqlConnection(db.connectionString)
+                connection.Open()
+
+                Using command As New SqlCommand(query, connection)
+                    command.ExecuteScalar()
+                End Using
+            End Using
+
+        Catch ex As Exception
+            Console.WriteLine("Error al eliminar el entrenamiento: " & ex.Message)
+        End Try
+
+    End Sub
+
+    Public Function AddMaterial(matName As String, quantity As Integer) As Integer
+
+        Dim matID = Club.GetMaterialID(matName)
+
+        Dim query As String = "INSERT INTO MaterialTrainings ([TRAINING_ID],[MATERIAL_ID],[QUANTITY]) VALUES (@p1, @p2, @p3); SELECT SCOPE_IDENTITY();"
+        Dim matTraining As Integer = -1
+
+        Dim dr As New DatabaseManager
+        Dim timeString As String = Hour
+        Dim timeValue As DateTime = DateTime.Parse(timeString)
+        Try
+            Using connection As New SqlConnection(dr.connectionString)
+                connection.Open()
+
+                Using command As New SqlCommand(query, connection)
+                    command.Parameters.AddWithValue("@p1", ID)
+                    command.Parameters.AddWithValue("@p2", matID)
+                    command.Parameters.AddWithValue("@p3", quantity)
+
+                    ' Execute the insert query and get the inserted ID
+                    matTraining = Convert.ToInt32(command.ExecuteScalar())
+                End Using
+            End Using
+        Catch ex As Exception
+            Console.WriteLine("Error al insertar el material en el entrenamiento: " & ex.Message)
+        End Try
+
+
+        Return matTraining
+
+    End Function
 
 End Class

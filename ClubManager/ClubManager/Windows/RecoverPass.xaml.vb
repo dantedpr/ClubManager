@@ -22,7 +22,7 @@ Public Class RecoverPass
                            "Tu código de recuperación es: " & verificationCode & vbCrLf & vbCrLf &
                            "Por favor, usa este código para restablecer tu contraseña." & vbCrLf & vbCrLf &
                            "Saludos," & vbCrLf &
-                           "Tu equipo de soporte"
+                           "ClubManager Support Team"
         EnviarCorreo(Club.Mail, "Código de verificación para restablecer su contraseña", cuerpo)
         MessageBox.Show("Debe haber recibido en la bandeja de entrada del mail asociado a la cuenta un código para restablecer su clave.", "Recuperar contraseña", MessageBoxButton.OK, MessageBoxImage.Information)
 
