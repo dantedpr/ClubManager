@@ -272,5 +272,37 @@ Public Class Player
         Status = reader("STATUS")
     End Sub
 
+    Public Function GetFileID() As Integer
+
+        Try
+
+            Dim db As New DatabaseManager
+            Dim fileId = -1
+            Dim s = "SELECT ID FROM FILES WHERE TYPE = 'PLAYER' AND ITEM_ID = " & ID
+
+            Using connection As New SqlConnection(db.connectionString)
+                ' Open connection
+                connection.Open()
+
+                Using command As New SqlCommand(s, connection)
+
+                    Dim dr As SqlDataReader = command.ExecuteReader()
+
+                    If dr.Read Then
+                        fileId = CInt(dr("ID"))
+                    End If
+
+                    dr.Close()
+                End Using
+
+                connection.Close()
+            End Using
+            Return fileId
+        Catch ex As Exception
+            MessageBox.Show("Error executing query: " & ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
 
 End Class
