@@ -733,4 +733,37 @@ Public Class Club
             Return 0
         End Try
     End Function
+
+    Public Shared Function GetNextTrainings(installation As String) As DataTable
+        Try
+
+            Dim query = "SELECT * FROM Trainings WHERE CLUB_ID = " & Club.ID
+
+            query = query & "AND [DATE] >= '" & DateTime.Now & "' AND [STADIUM] = '" & installation & "' ORDER BY DATE ASC"
+
+            Dim exists = False
+            Dim db As New DatabaseManager
+            Dim dataTable As New DataTable()
+
+            Using connection As New SqlConnection(db.connectionString)
+                ' Open connection
+                connection.Open()
+
+                Using command As New SqlCommand(query, connection)
+
+                    Dim dr As SqlDataReader = command.ExecuteReader()
+                    dataTable.Load(dr)
+                    dr.Close()
+                End Using
+
+                connection.Close()
+            End Using
+
+            Return dataTable
+        Catch ex As Exception
+            MessageBox.Show("Error executing query: " & ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
 End Class

@@ -57,6 +57,7 @@ Public Class EditPlayer
         BUT_File2.st1.HorizontalAlignment = HorizontalAlignment.Left
         BUT_File2.LBL_Text.FontSize = 8
         BUT_File2.LBL_Text.Margin = New Thickness(15, 1, 0, 0)
+        AddHandler BUT_File2.Click, AddressOf OpenFile
 
         AddHandler BUT_Cancel.Click, AddressOf CancelCreation
         BUT_Cancel.Background = New SolidColorBrush(Colors.White)
@@ -189,19 +190,29 @@ Public Class EditPlayer
         openFileDialog.Filter = "PDF Files (*.pdf)|*.pdf"
         openFileDialog.Multiselect = False
 
-        Dim db As New DatabaseManager
+        Dim db As New FileManager
+        Dim existsFile = _player.GetFileID()
         If openFileDialog.ShowDialog() = True Then
             Dim filePath As String = openFileDialog.FileName
             Dim bFile = FileToByteArray(filePath)
 
-            db.SaveFileToDatabase(openFileDialog.FileName, bFile)
+            If existsFile = -1 Then
+                db.SaveFileToDatabase(openFileDialog.FileName, bFile, _player.ID)
+                MessageBox.Show("Se ha guardado el documento asociado al jugador.", "Jugador", MessageBoxButton.OK, MessageBoxImage.Information)
+            Else
+                db.UpdateFileToDatabase(openFileDialog.FileName, bFile, existsFile)
+                MessageBox.Show("Se ha actualizado el documento asociado al jugador.", "Jugador", MessageBoxButton.OK, MessageBoxImage.Information)
+            End If
         End If
-
-
-        db.LoadFileFromDatabaseAndOpen(1)
-
         e.Handled = True
-        Me.Close()
+
+    End Sub
+
+    Private Sub OpenFile(sender As Object, e As RoutedEventArgs)
+
+        Dim db As New FileManager
+        db.LoadFileFromDatabaseAndOpen(_player.GetFileID())
+        e.Handled = True
 
     End Sub
 

@@ -101,7 +101,6 @@
                 Dim w1 As New HomeWindow
                 FrameWindow.Instance.CleanWindow()
                 FrameWindow.Instance.Content.Children.Add(w1)
-                w1.Load()
 
                 Me.Close()
 

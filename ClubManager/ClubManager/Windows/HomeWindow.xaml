@@ -32,11 +32,11 @@
             <Line X1="860" Y1="490" X2="860" Y2="110" Stroke="Black" StrokeThickness="2"/>
             <Line X1="580" Y1="490" X2="580" Y2="110" Stroke="Black" StrokeThickness="2"/>
             <Ellipse Width="100" Height="100" Stroke="Black" StrokeThickness="2" Margin="530,250,266,250"/>
-            <ComboBox  x:Name="playerTeam" Width="190" Height="30" Margin="668,27,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" />
-            <Label Name="LabelVersion1" Content="Alevín B - 17:30" Foreground="Black" VerticalContentAlignment="Top" FontWeight="SemiBold" FontSize="11" Margin="668,372,-668,-372" />
-            <Label Name="LabelVersion2" Content="Alevín E - 17:30" Foreground="Black" VerticalContentAlignment="Top" FontWeight="SemiBold" FontSize="11" Margin="380,372,-380,-372" />
-            <Label Name="LabelVersion3" Content="Benjamín F - 17:30" Foreground="Black" VerticalContentAlignment="Top" FontWeight="SemiBold" FontSize="11" Margin="668,171,-668,-171" />
-            <Label Name="LabelVersion4" Content="Prebenjamín A - 17:30" Foreground="Black" VerticalContentAlignment="Top" FontWeight="SemiBold" FontSize="11" Margin="380,171,-380,-171" />
+            <ComboBox  x:Name="clubInstallation" Width="190" Height="30" Margin="668,27,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" />
+            <Label Name="LabelVersion1" Content="" Foreground="Black" VerticalContentAlignment="Top" FontWeight="SemiBold" FontSize="11" Margin="668,372,-668,-372" />
+            <Label Name="LabelVersion2" Content="" Foreground="Black" VerticalContentAlignment="Top" FontWeight="SemiBold" FontSize="11" Margin="380,372,-380,-372" />
+            <Label Name="LabelVersion3" Content="" Foreground="Black" VerticalContentAlignment="Top" FontWeight="SemiBold" FontSize="11" Margin="668,171,-668,-171" />
+            <Label Name="LabelVersion4" Content="" Foreground="Black" VerticalContentAlignment="Top" FontWeight="SemiBold" FontSize="11" Margin="380,171,-380,-171" />
         </Grid>
 
     </Grid>

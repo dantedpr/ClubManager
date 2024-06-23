@@ -110,6 +110,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Config\FileManager.vb" />
     <Compile Include="Config\ImageManager.vb" />
     <Compile Include="Controls\CMGrid.xaml.vb">
       <DependentUpon>CMGrid.xaml</DependentUpon>
