@@ -44,10 +44,19 @@ Public Class EditPlayer
         AddHandler BUT_File.Click, AddressOf SaveFile
         BUT_File.Background = New SolidColorBrush(Colors.White)
         'BUT_Aceptar.GetBackground = New SolidColorBrush(System.Windows.Media.Color.FromRgb(210, 213, 214))
-        BUT_File.GetBackground = New SolidColorBrush(Colors.LightGreen)
-        BUT_File.ImageName = "accept.png"
+        BUT_File.GetBackground = New SolidColorBrush(Colors.WhiteSmoke)
+        BUT_File.ImageName = "upload.png"
         BUT_File.ButText = "Subir ficha"
 
+
+        BUT_File2.GetBackground = New SolidColorBrush(Colors.White)
+        BUT_File2.ImageName = "pdf.png"
+        BUT_File2.ButText = ""
+        BUT_File2.ToolTip = "Añadir material"
+        BUT_File2.Border = 0
+        BUT_File2.st1.HorizontalAlignment = HorizontalAlignment.Left
+        BUT_File2.LBL_Text.FontSize = 8
+        BUT_File2.LBL_Text.Margin = New Thickness(15, 1, 0, 0)
 
         AddHandler BUT_Cancel.Click, AddressOf CancelCreation
         BUT_Cancel.Background = New SolidColorBrush(Colors.White)

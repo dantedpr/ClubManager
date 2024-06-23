@@ -478,6 +478,39 @@ Public Class Club
         End Try
     End Function
 
+    Public Shared Function GetMaterialsNames() As List(Of String)
+        Try
+
+            Dim query = "SELECT NAME FROM Material WHERE CATEGORY <> 'Instalacion' AND CATEGORY <> 'Campo' AND CLUB_ID = " & Club.ID
+
+
+            Dim db As New DatabaseManager
+            Dim li As New List(Of String)
+
+            Using connection As New SqlConnection(db.connectionString)
+                ' Open connection
+                connection.Open()
+
+                Using command As New SqlCommand(query, connection)
+
+                    Dim dr As SqlDataReader = command.ExecuteReader()
+
+                    While dr.Read()
+                        li.Add(dr("NAME").ToString())
+                    End While
+                    dr.Close()
+                End Using
+
+                connection.Close()
+            End Using
+
+            Return li
+        Catch ex As Exception
+            MessageBox.Show("Error executing query: " & ex.Message)
+            Return Nothing
+        End Try
+    End Function
+
     Public Shared Function GetInstallations() As List(Of String)
         Try
 
@@ -641,4 +674,63 @@ Public Class Club
         End Try
     End Function
 
+    Public Shared Function CheckQuantity(materialName As String) As Integer
+        Try
+
+            Dim query = "SELECT Quantity FROM Material WHERE CLUB_ID = '" & Club.ID & "' AND Name = '" & materialName & "'"
+            Dim quantity = 0
+            Dim db As New DatabaseManager
+            Using connection As New SqlConnection(db.connectionString)
+                ' Open connection
+                connection.Open()
+
+                Using command As New SqlCommand(query, connection)
+
+                    Dim dr As SqlDataReader = command.ExecuteReader()
+                    If dr.Read() Then
+                        quantity = CInt(dr("Quantity"))
+                    End If
+
+                    dr.Close()
+                End Using
+
+                connection.Close()
+            End Using
+
+            Return quantity
+        Catch ex As Exception
+            MessageBox.Show("Error executing query: " & ex.Message)
+            Return 0
+        End Try
+    End Function
+
+    Public Shared Function GetMaterialID(materialName As String) As Integer
+        Try
+
+            Dim query = "SELECT ID FROM Material WHERE CLUB_ID = '" & Club.ID & "' AND Name = '" & materialName & "'"
+            Dim matID = 0
+            Dim db As New DatabaseManager
+            Using connection As New SqlConnection(db.connectionString)
+                ' Open connection
+                connection.Open()
+
+                Using command As New SqlCommand(query, connection)
+
+                    Dim dr As SqlDataReader = command.ExecuteReader()
+                    If dr.Read() Then
+                        matID = CInt(dr("ID"))
+                    End If
+
+                    dr.Close()
+                End Using
+
+                connection.Close()
+            End Using
+
+            Return matID
+        Catch ex As Exception
+            MessageBox.Show("Error executing query: " & ex.Message)
+            Return 0
+        End Try
+    End Function
 End Class
