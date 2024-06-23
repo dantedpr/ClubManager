@@ -70,7 +70,7 @@
             <controls:CMButton x:Name="BUT_Aceptar"  Width="100" Height="30" Margin="0,0,34,30" Border = "2" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom"></controls:CMButton>
 
             <StackPanel Orientation="Vertical" Height="324" Width="530" Margin="0,256,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
-                <controls:CMGrid x:Name="ClubGrid" Width="501" Height="257">
+                <controls:CMGrid x:Name="Info_Grid" Width="501" Height="257">
 
                 </controls:CMGrid>
 

@@ -91,7 +91,6 @@ Public Class FrameWindow
         w.CleanWindow()
         Dim w1 As New HomeWindow
         w.Content.Children.Add(w1)
-        w1.Load()
     End Sub
 
     Public Overloads Sub Minimize()
