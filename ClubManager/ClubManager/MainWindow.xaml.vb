@@ -84,9 +84,6 @@
 
     Public Sub Login()
 
-        txtUser.Text = "PRATAE"
-        txtPass.Password = "FIB"
-
         If txtUser.Text <> "" And txtPass.Password <> "" Then
 
             Dim db As New DatabaseManager
